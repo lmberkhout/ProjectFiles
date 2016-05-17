@@ -90,6 +90,13 @@ class Authors:
         for a in affil:
             nums.append(self.affilNums[a])
         return nums
+    def niceList(self,fileName=None):
+        for aff in self.affiliationList:
+            print aff
+            for au in self.fileOrder:
+                for auaff in self.affiliations(au):
+                    if auaff == aff:
+                        print "\t%s %s %s" % (self.firstName(au).replace('~',' '),self.middleName(au).replace('~',' '), self.lastName(au).replace('~',' '))      
 
 #################################################################
 ###Customize output via this script.                          ###

@@ -8,7 +8,7 @@ Harvard-Smithsonian Center for Astrophysics, Cambridge, MA: Peter K.~G. Williams
 Department of Physics, Massachusetts Institute of Technology, Cambridge, MA: Aaron Ewall-Wice, Jacqueline N. Hewitt, Abraham R. Neben, Max Tegmark, Haoxuan Zheng
 National Radio Astronomy Observatory, Charlottesville, VA: Richard F. Bradley
 National Radio Astronomy Observatory, Socorro, NM: Chris L. Carilli, Brian Glendenning, James Robnett
-Department of Physics and Astronomy, University of Pennsylvania, Philadelphia, PA: James E. Aguirre, Saul A. Kohn
+Department of Physics and Astronomy, University of Pennsylvania, Philadelphia, PA: James E. Aguirre, Saul A. Kohn, Zachary Martinot
 Department of Physics and Electronics, Rhodes University, PO Box 94, Grahamstown, 6140, South Africa: Gianni Bernardi
 Scuola Normale Superiore, Pisa, Italy: Bradley Greig, Andrei Mesinger
 SKA-SA, Cape Town, South Africa: Gianni Bernardi, Gcobisa Fadana, Anita Loots, Matthys Maree, Kathryn Rosie, Randall Fritz, Nathan Mathison, Cresshim Malgas, Raddwine Sell, Samantha Pieterse, Lourence Malan, Austin Julius, MacCalvin Kariseb, Craig Smith, Jasper Grobbelaar, Telalo Lekalake, Eunice Matsetela, Angelo Syce
