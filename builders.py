@@ -104,6 +104,7 @@ class Authors:
 ###Customize output via this script.                          ###
 #################################################################
 if __name__ == '__main__':
+    import sys
     h = Authors()
     h.getAuthors()
     affilList = h.setAffiliationNumbers()
@@ -123,27 +124,43 @@ if __name__ == '__main__':
         if not h.isGroup(n):
    	    authororder.append(n)
     ################################################################################
-        
-    ##############################Write out
-    ###This assumes that author 1 is in the first listed affiliation
     s = '\\author{'
-    for i,a in enumerate(authororder):
-        affilstr = str(h.affiliationNumbers(a)).strip('[').strip(']')
-        if i==0:
-            atxt = '\\footnote{%s}' % (affilList)
-            a0 = h.affiliationNumbers(a)
-            if len(a0)>1:
-                atxt+='~$^{'
-                for j in range(1,len(a0)):
-                    atxt+=','+str(a0[j])
-                atxt+='}$'
-        else:
-            atxt = '$^{'+affilstr+'}$'
-        s+= "%s %s %s%s, " % (h.firstName(a),h.middleName(a), h.lastName(a), atxt)
-    s=s.strip().strip(',')+'}\n\n'
-    affil0 = h.affiliationNumbers(authororder[0])[0]-1
-    s+='\\begin{document}\n\\maketitle\n\\setcounter{footnote}{0}\n\n'
-    
+    try:
+        printout_style = sys.argv[1]
+    except IndexError:
+        printout_style = '1'
+    if printout_style == '1':
+        ##############################Write out
+        ###This assumes that author 1 is in the first listed affiliation
+        for i,a in enumerate(authororder):
+            affilstr = str(h.affiliationNumbers(a)).strip('[').strip(']')
+            if i==0:
+                atxt = '\\footnote{%s}' % (affilList)
+                a0 = h.affiliationNumbers(a)
+                if len(a0)>1:
+                    atxt+='~$^{'
+                    for j in range(1,len(a0)):
+                        atxt+=','+str(a0[j])
+                    atxt+='}$'
+            else:
+                atxt = '$^{'+affilstr+'}$'
+            s+= "%s %s %s%s, " % (h.firstName(a),h.middleName(a), h.lastName(a), atxt)
+        s=s.strip().strip(',')+'}\n\n'
+        s+='\\begin{document}\n\\maketitle\n\\setcounter{footnote}{0}\n\n'
+        affil0 = h.affiliationNumbers(authororder[0])[0]-1
+    elif printout_style == '2':
+        for i, a in enumerate(authororder):
+            affilstr = str(h.affiliationNumbers(a)).strip('[').strip(']')
+            atxt = '\\altaffilmark{%s}' % (affilstr)
+            s+= "%s %s %s%s, " % (h.firstName(a),h.middleName(a), h.lastName(a), atxt)
+        s=s.strip().strip(',')+'}\n\n'
+        s+='\\affil{HERA Collaboration}'
+        for i, a in enumerate(h.affilNums):
+            s+='\\altaffiltext{%d}{%s}\n' % (h.affilNums[a],a)
+        s+='\\begin{document}\n\\maketitle\n\n'
+        
+    print s
+        
     fpout= open('authors.tex','w')
     fpout.write(s)
     fpout.close()
