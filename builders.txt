@@ -11,7 +11,19 @@ National Radio Astronomy Observatory, Socorro, NM: Chris L. Carilli, Brian Glend
 Department of Physics and Astronomy, University of Pennsylvania, Philadelphia, PA: James E. Aguirre, Saul A. Kohn, Zachary Martinot
 Department of Physics and Electronics, Rhodes University, PO Box 94, Grahamstown, 6140, South Africa: Gianni Bernardi
 Scuola Normale Superiore, Pisa, Italy: Bradley Greig, Andrei Mesinger
-SKA-SA, Cape Town, South Africa: Gianni Bernardi, Gcobisa Fadana, Anita Loots, Matthys Maree, Kathryn Rosie, Randall Fritz, Nathan Mathison, Cresshim Malgas, Raddwine Sell, Samantha Pieterse, Lourence Malan, Austin Julius, MacCalvin Kariseb, Craig Smith, Jasper Grobbelaar, Telalo Lekalake, Eunice Matsetela, Angelo Syce
+SKA-SA, Cape Town, South Africa: Gianni Bernardi, Gcobisa Fadana, Anita Loots, Matthys Maree, Kathryn Rosie, Randall Fritz, Cresshim Malgas, Raddwine Sell, Samantha Pieterse, Lourence Malan, Austin Julius, MacCalvin Kariseb, Craig Smith, Jasper Grobbelaar, Telalo Lekalake, Eunice Matsetela, Angelo Syce
 Department of Physics, University of Washington, Seattle, WA: Bryna J. Hazelton, Miguel F. Morales, Jon Ringuette
 eScience Institute, University of Washington, Seattle, WA:  Bryna J. Hazelton
 Hubble Fellow:  Adrian Liu
+&&&&&&&&&&&&&&&&&
+#ORCID
+
+bernardi 0000-0002-0916-7443
+dillon 0000-0003-3336-9958
+ewall-wice 0000-0002-0086-7363
+greig 0000-0002-4085-2094
+hazelton 0000-0001-7532-645X
+liu 0000-0001-6876-0928
+kohn 0000-0001-6744-5328
+thyagarajan 0000-0003-1602-7868
+williams 0000-0003-3734-3587
