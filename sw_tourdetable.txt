@@ -1,0 +1,36 @@
+#HERA Workshop 2016 - software tour de table
+
+- Danny:  on-site database development; pkg for drone dev/ops; legacy PAPER update, PAPER PS end-to-end pipeline
+- Adam L:  simulations with FHD, standalone pipeline for this
+- Josh K:  PS in FHD, low-level to scripting
+- Jonnie:  pyuvdata, 21cmsense
+- Wenyang:  omnical on FHD; FHD sim on MWAv2; capo fork
+- Jack: HERA f-engine; correlator repos; CASPER repo; simulink/firmware design
+- Nichole:  FHD data for HERA; incorporating beams; on-site cals w/ FHD
+- Aaron EW: simulations with PRIsm;  AIPY and CAPO; dropbox, but wants to get to repo-land
+- Abraham:  21cm-IR xcorr code
+- Adam B:  FHD eppsilon; scripts; pyuvdata; starting on HERA stuff
+- James A: RM for ionosphere in public domain; polarized sky sims, need to pull into PRIsm; global signal analysis
+- Zara:  ADC/cal and SNAP on GitHub
+- Nicolas:  EM sims, F-O-M scripts, but not in repo
+- Zaki:  cal/omnical; CAPO; working on forks
+- Carina:  PIPER pipeline scripts; work with Matt K on interface
+- Eloy:  scripting F-O-M; SKA beam pattern compression
+- Nima:  simulations and measurement; calibration related to in-lab hardware measurements
+- Brad:  21cmc
+- Gianni:  cal; imaging
+- Nick:  parameter constraint pipeline (w/ 21cmsense, 21cmfast, …); will have HERA interface
+- Zak: simulator for full-pol with direction dependent effects e.g. ionosphere; FHD/PRIsm dev
+- Nipanjana:  simulations and common set
+- Ruby:  FG modeling w/ MWA; FHD branching; FHD->AWS
+- Paul:  N-body hydro code (private for now); density field overlay code
+- Saul:  data analysis; high-level scripting; pol-sky simulations; ionosphere model; big batch scripts
+- Peter:  MC; ops; conda packages (he can make them, so make standard HERA stack…)
+- Jordan: global 21cm model on bit-bucket; adding simple PS processor (Aries)
+- Victor:  simulations on sinuous feed
+- Josh D:  bp cal using redundancy (cal in capo); lots of bad scripts; array config scripts in capo
+- Nithya:  PRIsm-sky through to instrument and adding more effects; EPIC-s/w emulator of generic FFT correlator
+- Aaron P:  AIPY; graduating scripts to CAPO modules; OQE; omnical deep dive; linsolve; unit tests
+- Adrian:  spherical harmonics; analyze large chunks of spectrum
+- Dave:  hera_mc; hera-cad
+- Chris:  Bojan has closure phase scripts for CASA; unfits-imaging CASA pipeline; Lindley and Peter Sims (going to Brown) working on Bayesian pipeline
