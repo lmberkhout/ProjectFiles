@@ -27,27 +27,27 @@ Figure \ref{fig:hi_level} shows the very high-level network configuration for 20
 \label{fig:hi_level}
 \end{figure}
 
-Prior to the move of the equipment from the CMC to the KAPB, there is a desire to change the network configuration to accommodate both new site and new HERA changes in the current network.  There is no strict requirement that this need happen before that move, however it allows the network change to be tested before a major hardware relocation.  When the equipment is relocated to the KAPB additional storage will be added to the system, as well as upgrading the switches.  Fig. \ref{fig:net_org} 
+Prior to the move of the equipment from the CMC to the KAPB, there is a desire to change the network configuration to accommodate both new site and new HERA changes in the current network.  There is no strict requirement that this need happen before that move, however it allows the network change to be tested before a major hardware relocation.  When the equipment is relocated to the KAPB additional storage will be added to the system, as well as upgrading the switches.
 
-The proposed network arrangement is shown in Figure \ref{fig:net_org}.  The primary requirements for the current system that will take us through the middle of 2018:
+The proposed network arrangement is shown in Figure \ref{fig:net_org}.  The primary requirements for the current system that will take us through the middle of 2018 are:
 \begin{enumerate}
-\item login portal for access from internet
+\item login portal for access from the internet
 \item access to the KAT network for integration with CAM
 \item a dedicated fiber pair between the HERA container and Processing cluster (currently CMC, soon KAPB)
-\item access to the internet and KAT IP space for 32 machines
-\item data rate to the US, 200Mbps by mid 2017, 400Mbps by mid 2018
+\item 32 reserved IP addresses on the KAT network
+\item data rate to the US of 200Mbps by mid 2017 growing to 400Mbps by mid 2018
 \end{enumerate}
+
+\begin{figure}[H]
+\includegraphics[width=0.8\textwidth]{HERA_2017_network_organization.png}
+\centering
+\caption{Proposed networking diagram.}
+\label{fig:net_org}
+\end{figure}
 
 \section{Data Rate}
 HERA currently records at a data rate of 200Mbps and in 2018 will increase to 1.5Gbps. Currently the average bandwidth to the US is 60Mbps so we extract a small fraction of data for transfer. This limits analysis capabilities and means only a small fraction of data exists in multiple copies.  Even moving data at the rate of 60Mbps causes conflict with SKA SA staff internet use, so copies to the US are limited to night time hours.  
 
 The desired data rate to support current operations is 200Mbps, and the target for mid 2018 is 400Mbps.
-
-\begin{figure}[H]
-\includegraphics[width=0.8\textwidth]{HERA_2017_network_organization.png}
-\centering
-\caption{Diagram of proposed networking that will be good.}
-\label{fig:net_org}
-\end{figure}
 
 \end{document}
