@@ -9,23 +9,23 @@
 
 \begin{document}
 
-\author{HERA}
+\author{HERA Team}
 \title{Roadmap for HERA Network Configuration and Bandwidth}
 \maketitle
 
 \section{Introduction}
 HERA is an international experiment to detect and characterize the Epoch of
 Reionization (EOR).  The telescope is located at the South African SKA site in
-the Karoo Astronomy Reserve.  This brief summarizes the overall network
+the Karoo Astronomy Reserve.  This note summarizes the overall network
 configuration and bandwidth for HERA as relevant to the interfaces with SKA-SA
 infrastructure.  HERA construction and observing are proceeding in parallel.
 
-The HERA correlator is currently located next to the telescope array. In late 2017 or early 2018, the correlator will be moved to the KAPB. At that time the correlator will ingest raw voltage streams at terabit rates. These will be fed over a bundle of 96 fibers from the array to the KAPB.
+The HERA correlator is currently located next to the telescope array. In late 2017 or early 2018, the correlator will be moved to the KAPB. At that time the correlator will ingest raw voltage streams at terabit rates. These will be fed over a bundle of $\sim$96 fibers from the array to the KAPB. This future upgrade is outside the scope of this summary, other than to note the future bandwidth requirements to the US.
 
 \section{Current setup and KAPB move}
 Figure~\ref{fig:hi_level} shows the very high-level network configuration for
 2017 and 2018.  The correlator currently lives in the `HERA container' in the
-middle of the HERA telescope array.  The correlator data files are transferred for processing and storage in the CMC container using a dedicated fiber.  The processed files are then transferred off-continent to the USA, currently to a cluster at the University of Pennsylvania in Philadelphia, PA.  Over the next month or two, the CMC-based equipment will be moved to the KAPB and the USA node will be moved to the National Radio Astronomy Observatory (NRAO) site in Socorro, NM.  The single pair of 1Ge fiber between the HERA container and the processing cluster is adequate for operations through fall of 2017.
+middle of the HERA telescope array.  The correlator data files are transferred for processing and storage in the CMC container using a dedicated fiber.  The processed files are then transferred off-continent to the USA, currently to a cluster at the University of Pennsylvania in Philadelphia, PA.  Over the next month or two, the CMC-based equipment will be moved to the KAPB and the USA node will be moved to the National Radio Astronomy Observatory (NRAO) site in Socorro, NM.  The single pair of 1Gbe fiber between the HERA container and the processing cluster is adequate for operations through fall of 2017.
 
 \begin{figure}[H]
 \includegraphics[width=0.8\textwidth]{network.pdf}
@@ -40,7 +40,7 @@ KAT/SKA network and HERA.  There is no strict requirement that this must
 happen before the physical move, but doing so allows the network change to be
 deployed separately from the major hardware relocation.  When the equipment is relocated to the KAPB additional storage will be added to the system and the switches will be upgraded.
 
-Figure~\ref{fig:net_org} shows a schematic of the proposed network arrangement. In order to ensure smooth HERA operations through mid-2018, \textbf{the following requirements must be satisfied:}
+Figure~\ref{fig:net_org} shows a schematic of the proposed network arrangement. In order to ensure smooth HERA operations through mid-2018, we provide the following \textbf{requirements}:
 \begin{enumerate}
 \item There must be a login portal allowing secure access to HERA nodes from the Internet.
 \item There must be 32 IP addresses reserved for HERA nodes on the SKA/KAT network so that they may be accessed directly from our login portal.
