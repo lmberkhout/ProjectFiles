@@ -22,7 +22,7 @@ infrastructure.  HERA construction and observing are proceeding in parallel.
 
 The HERA correlator is currently located next to the telescope array. In late 2017 or early 2018, the correlator will be moved to the KAPB. At that time the correlator will ingest raw voltage streams at terabit rates. These will be fed over a bundle of 96 fibers from the array to the KAPB.
 
-\section{Current setup and KAPB move}
+\section{HERA network requirements prior to new correlator in 2018}
 Figure~\ref{fig:hi_level} shows the very high-level network configuration for
 2017 and 2018.  The correlator currently lives in the `HERA container' in the
 middle of the HERA telescope array.  The correlator data files are transferred for processing and storage in the CMC container using a dedicated fiber.  The processed files are then transferred off-continent to the USA, currently to a cluster at the University of Pennsylvania in Philadelphia, PA.  Over the next month or two, the CMC-based equipment will be moved to the KAPB and the USA node will be moved to the National Radio Astronomy Observatory (NRAO) site in Socorro, NM.  The single pair of 1Ge fiber between the HERA container and the processing cluster is adequate for operations through fall of 2017.
@@ -40,7 +40,9 @@ KAT/SKA network and HERA.  There is no strict requirement that this must
 happen before the physical move, but doing so allows the network change to be
 deployed separately from the major hardware relocation.  When the equipment is relocated to the KAPB additional storage will be added to the system and the switches will be upgraded.
 
-Figure~\ref{fig:net_org} shows a schematic of the proposed network arrangement. In order to ensure smooth HERA operations through mid-2018, \textbf{the following requirements must be satisfied:}
+
+
+Figure~\ref{fig:net_org} shows a schematic of the proposed network arrangement. In order to ensure smooth HERA operations through mid-2018, the following requirements must be satisfied:
 \begin{enumerate}
 \item There must be a login portal allowing secure access to HERA nodes from the Internet.
 \item There must be 32 IP addresses reserved for HERA nodes on the SKA/KAT network so that they may be accessed directly from our login portal.
@@ -60,5 +62,16 @@ Figure~\ref{fig:net_org} shows a schematic of the proposed network arrangement. 
 HERA currently records at a data rate of 200~Mbps. In 2018 this will increase to 1.5~Gbps. Currently the average bandwidth to the US is 60~Mbps, so we can only transfer a small fraction of our data. This limits analysis capabilities and means that mission-critical data are not replicated off-site. Moving data at the currently-attainable rate of 60~Mbps causes conflict with SKA~SA staff Internet use, so copies to the US are limited to night-time hours, further reducing the effective bandwidth available to the project.
 
 The desired data rate to support current operations is 200~Mbps. The target for mid-2018 is 400~Mbps.
+
+\section{Action Plan}
+Options are limited by only having a single fiber into the KAPB available for HERA use and by a desire to have a single connection point for all HERA machines onto the SKA network. This will limit the possibility of loopbacks.  On the HERA side there is a desire to let several machines be able to access the outside world and some smaller subset of machines to be visible on the SKA net.  In the current setup, HERA is connected to the legacy KAT network, which is kept wholly separate from the SKA net, and because most machines are behind a NAT it is difficult to monitor traffic and bandwidth usage from individual machines. The KAT network is being phased out.  
+
+In the new setup HERA will be connected to a single level 3 port on the KAPB Cisco network and given a subnet of some range of IPs. Using virtual networks in the HERA switches a private network and a public network will be created at the ska connection point and then both networks will be extended out to the HERA container. See diagrams in Figure \ref{fig:network_drawings}.  The change will proceed in two steps. First we will make all the necessary networking changes, tapping into the KAPB via the available fiber and creating the networks in the CMC. Second we will move the HERA processing machines and the main connection point into the KAPB, replacing the CMC switch with a fiber pass through.
+
+\begin{figure}[H]
+\includegraphics[width=0.49\textwidth]{HERA_network_Jan2017.jpg}
+\includegraphics[width=0.49\textwidth]{HERA_network_2017_CMC.jpg}\includegraphics[width=0.49\textwidth]{HERA_network_2017_KAPB.jpg}
+\caption{Notes from meeting Feb 13 2017. Clockwise from top left, the current networking setup with the HERA container and the HERA processing cluster in the CMC, the proposed intermediate setup moving HERA off the KAT network and onto the KAPB Cisco network and moving from two fibers (private and KAT) to a single fiber hosting two virtual nets, then bottom left moving the processing cluster into the KAPB, replacing the router in the CMC with a fiber pass-through. \label{fig:network_drawings}}
+\end{figure}
 
 \end{document}
