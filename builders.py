@@ -1,28 +1,30 @@
 #! /usr/bin/env python
-#################################################################
-###Customize output via the script at the bottom of this file.###
-#################################################################
+# ################################################################
+# ##Customize output via the script at the bottom of this file.###
+# ################################################################
+
 
 class Authors:
     """Read in and format author lists for papers"""
-    def __init__(self,filein='builders.txt'):
+    def __init__(self, filein='builders.txt'):
         self.filein = filein
         self.authors = {}
         self.affiliationList = []
         self.fileOrder = []
-        self.groupSymbols = ['*','@','#','%']
-    def getAuthors(self,filein=None):
+        self.groupSymbols = ['*', '@', '#', '%']
+
+    def getAuthors(self, filein=None):
         if filein is not None:
             self.filein = filein
-            print 'Setting input file to '+filein
+            print 'Setting input file to ' + filein
         print
-        print 'Reading '+self.filein
-        fpin = open(self.filein,'r')
+        print 'Reading ' + self.filein
+        fpin = open(self.filein, 'r')
         for line in fpin:
-            if line.strip()[0] == '#' or len(line.strip())==0:
+            if line.strip()[0] == '#' or len(line.strip()) == 0:
                 continue
             data = line.split(':')
-            if len(data)==2:  #Process valid data line
+            if len(data) == 2:  # Process valid data line
                 affiliation = data[0].strip()
                 self.affiliationList.append(affiliation)
                 nameslist = data[1].strip()
@@ -33,7 +35,7 @@ class Authors:
                     group = False
                     for sym in self.groupSymbols:
                         if sym in firstName:
-	                    group = sym
+                            group = sym
                             firstName = firstName.strip(sym)
                             break
                     if len(n) == 1:
@@ -49,70 +51,87 @@ class Authors:
                         print line
                         lastName = 'null'
                     if lastName != 'null':
-                        akey = lastName.lower()+firstName.lower()
+                        akey = lastName.lower() + firstName.lower()
                         if akey in self.authors.keys():
-                            print 'Another entry for %s %s now at %s' % (firstName,lastName,affiliation)
+                            print 'Another entry for %s %s now at %s' % (firstName, lastName, affiliation)
                             self.authors[akey][3].append(affiliation)
                         else:
-      		            self.authors[akey] = [firstName,middleInitial,lastName,[affiliation],group]
-      		            self.fileOrder.append(akey)
-      		        if group:
-      		            print 'Found group '+group+':  '+akey
-      	print
+                            self.authors[akey] = [firstName, middleInitial, lastName, [affiliation], group]
+                            self.fileOrder.append(akey)
+                        if group:
+                            print 'Found group ' + group + ':  ' + akey
         fpin.close()
         self.alphaOrder = sorted(self.authors.keys())
-    def firstName(self,name):
+
+    def firstName(self, name):
         return self.authors[name][0]
-    def middleName(self,name):
+
+    def middleName(self, name):
         return self.authors[name][1]
-    def lastName(self,name):
+
+    def lastName(self, name):
         return self.authors[name][2]
-    def affiliations(self,name):
+
+    def affiliations(self, name):
         return self.authors[name][3]
-    def isGroup(self,name):
+
+    def isGroup(self, name):
         return self.authors[name][4]
+
     def setAffiliationNumbers(self):
         self.affilNums = {}
         i = 1
         for a in self.affiliationList:
             if a not in self.affilNums.keys():
                 self.affilNums[a] = i
-                if i==1:
-                    self.affilOrdered=a+', '
+                if i == 1:
+                    self.affilOrdered = a + ', '
                 else:
-	            self.affilOrdered+='$^{'+str(i)+'}$'+a+', '
-                i+=1
+                    self.affilOrdered += '$^{' + str(i) + '}$' + a + ', '
+                i += 1
         self.affilOrdered = self.affilOrdered.strip().strip(',')
         return self.affilOrdered
-    def affiliationNumbers(self,name):
+
+    def affiliationNumbers(self, name):
         affil = self.affiliations(name)
         nums = []
         for a in affil:
             nums.append(self.affilNums[a])
         return nums
-    def niceList(self,fileName=None,flat=False):
+
+    def niceList(self, fileName=None, flat=False):
         for aff in self.affiliationList:
-            print '\n'+aff
+            print '\n' + aff
             for au in self.fileOrder:
                 for auaff in self.affiliations(au):
                     if auaff == aff:
                         if not flat:
-                            print "\t%s %s %s" % (self.firstName(au).replace('~',' '),self.middleName(au).replace('~',' '), self.lastName(au).replace('~',' '))      
+                            print "\t%s %s %s" % (self.firstName(au).replace('~', ' '),
+                                                  self.middleName(au).replace('~', ' '),
+                                                  self.lastName(au).replace('~', ' '))
                         else:
-                            print "%s %s %s, " % (self.firstName(au).replace('~',' '),self.middleName(au).replace('~',' '), self.lastName(au).replace('~',' ')),
-#################################################################
-###Customize output via this script.                          ###
-#################################################################
+                            print "%s %s %s, " % (self.firstName(au).replace('~', ' '),
+                                                  self.middleName(au).replace('~', ' '),
+                                                  self.lastName(au).replace('~', ' ')),
+
+
+# ################################################################
+# ##Customize output via this script.                          ###
+# ################################################################
 if __name__ == '__main__':
-    import sys
+    import argparse
+
+    ap = argparse.ArgumentParser()
+    ap.add_argument('printout_style', nargs='?', help='cryptic printout style', default='1')
+    args = ap.parse_args()
+
     h = Authors()
     h.getAuthors()
     affilList = h.setAffiliationNumbers()
-    #############################Get order	
     authororder = []
-    #######HERE'S WHERE YOU ADD THE LOGIC TO SORT THE AUTHORS IN DESIRED ORDER######
-    ###h.fileOrder has the list as they appeared in the document
-    ###h.alphaOrder has the list in alphabetical order
+    # ######HERE'S WHERE YOU ADD THE LOGIC TO SORT THE AUTHORS IN DESIRED ORDER######
+    # ##           h.fileOrder has the list as they appeared in the document
+    # ##           h.alphaOrder has the list in alphabetical order
     ###
     for n in h.fileOrder:
         if h.isGroup(n) == '*':
@@ -122,50 +141,42 @@ if __name__ == '__main__':
             authororder.append(n)
     for n in h.alphaOrder:
         if not h.isGroup(n):
-   	    authororder.append(n)
-    ################################################################################
+            authororder.append(n)
+    # ###############################################################################
     s = '\\author{'
-    try:
-        printout_style = sys.argv[1]
-    except IndexError:
-        printout_style = '1'
-    if printout_style == '1':
-        ##############################Write out
-        ###This assumes that author 1 is in the first listed affiliation
-        for i,a in enumerate(authororder):
+    if args.printout_style == '1':
+        # ##This assumes that author 1 is in the first listed affiliation
+        for i, a in enumerate(authororder):
             affilstr = str(h.affiliationNumbers(a)).strip('[').strip(']')
-            if i==0:
+            if i == 0:
                 atxt = '\\footnote{%s}' % (affilList)
                 a0 = h.affiliationNumbers(a)
-                if len(a0)>1:
-                    atxt+='~$^{'
-                    for j in range(1,len(a0)):
-                        atxt+=','+str(a0[j])
-                    atxt+='}$'
+                if len(a0) > 1:
+                    atxt += '~$^{'
+                    for j in range(1, len(a0)):
+                        atxt += ',' + str(a0[j])
+                    atxt += '}$'
             else:
-                atxt = '$^{'+affilstr+'}$'
-            s+= "%s %s %s%s, " % (h.firstName(a),h.middleName(a), h.lastName(a), atxt)
-        s=s.strip().strip(',')+'}\n\n'
-        s+='\\begin{document}\n\\maketitle\n\\setcounter{footnote}{0}\n\n'
-        affil0 = h.affiliationNumbers(authororder[0])[0]-1
-    elif printout_style == '2':
+                atxt = '$^{' + affilstr + '}$'
+            s += "%s %s %s%s, " % (h.firstName(a), h.middleName(a), h.lastName(a), atxt)
+        s = s.strip().strip(',') + '}\n\n'
+        s += '\\begin{document}\n\\maketitle\n\\setcounter{footnote}{0}\n\n'
+        affil0 = h.affiliationNumbers(authororder[0])[0] - 1
+    elif args.printout_style == '2':
         for i, a in enumerate(authororder):
             affilstr = str(h.affiliationNumbers(a)).strip('[').strip(']')
             atxt = '\\altaffilmark{%s}' % (affilstr)
-            s+= "%s %s %s%s, " % (h.firstName(a),h.middleName(a), h.lastName(a), atxt)
-        s=s.strip().strip(',')+'}\n\n'
-        s+='\\affil{HERA Collaboration}'
+            s += "%s %s %s%s, " % (h.firstName(a), h.middleName(a), h.lastName(a), atxt)
+        s = s.strip().strip(',') + '}\n\n'
+        s += '\\affil{HERA Collaboration}'
         for i, a in enumerate(h.affilNums):
-            s+='\\altaffiltext{%d}{%s}\n' % (h.affilNums[a],a)
-        s+='\\begin{document}\n\\maketitle\n\n'
-        
-    print s
-        
-    fpout= open('authors.tex','w')
+            s += '\\altaffiltext{%d}{%s}\n' % (h.affilNums[a], a)
+        s += '\\begin{document}\n\\maketitle\n\n'
+
+    fpout = open('authors.tex', 'w')
     fpout.write(s)
     fpout.close()
-    
+
     print s
     print '\n\n'
     h.niceList(flat=True)
-

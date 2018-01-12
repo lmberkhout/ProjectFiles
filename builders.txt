@@ -1,5 +1,5 @@
 #Affiliation:  [1_char_Group_if_desired]First~Name Middle~Name/Initial~(or~blank) Last~Name, etc (use tilde for spaces in first/middle/last)
-Department of Astronomy, University of California, Berkeley, CA: Zaki S. Ali, Carina Cheng, *David R. DeBoer, Joshua S. Dillon, Jack Hickish, Adrian Liu, David MacMahon, @Aaron R. Parsons, Nipanjana Patra
+Department of Astronomy, University of California, Berkeley, CA: Zaki S. Ali, Carina Cheng, David R. DeBoer, Joshua S. Dillon, Jack Hickish, Adrian Liu, David MacMahon, Aaron R. Parsons, Nipanjana Patra
 School of Earth and Space Exploration, Arizona State University, Tempe, AZ: Adam P. Beardsley, Judd D. Bowman, Daniel C. Jacobs, Nithyanandan Thyagarajan
 Physics Department, Brown University, Providence, RI:  Jonathan C. Pober
 Department of Physics and Astronomy, University of California, Los Angeles, CA:  Steve R. Furlanetto
@@ -17,7 +17,6 @@ eScience Institute, University of Washington, Seattle, WA:  Bryna J. Hazelton
 Hubble Fellow:  Adrian Liu
 &&&&&&&&&&&&&&&&&
 #ORCID
-
 bernardi 0000-0002-0916-7443
 dillon 0000-0003-3336-9958
 ewall-wice 0000-0002-0086-7363
