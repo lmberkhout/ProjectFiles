@@ -78,7 +78,6 @@ class Authors:
                     self.affilOrdered += '$^{' + str(i) + '}$' + a + ', '
                 i += 1
         self.affilOrdered = self.affilOrdered.strip().strip(',')
-        return self.affilOrdered
 
     def getAffiliationNumbers(self, key):
         affil = self.authors[key]['affiliations']
@@ -98,13 +97,48 @@ class Authors:
                         niceLast = self.authors[au]['last'].replace('~', ' ')
                         print "\t%s %s %s" % (niceFirst, niceMiddle, niceLast)
 
+    def group_ordered_list(self):
+        self.authororder = []
+        for symbol in GROUP_ORDER:
+            if LISTING_ORDER[symbol] == 'fileorder':
+                ordering = self.fileOrder
+            else:
+                ordering = self.alphaOrder
+            for n in ordering:
+                if self.authors[n]['group'] == symbol:
+                    self.authororder.append(n)
+        return self.authororder
+
+    def get_latex(self):
+        print("This doesn't handle the first affiliation number reliably, unless the first author is from the first affiliation")
+        print("Need to fix it (or can reorder in builders.txt in the meantime)")
+        s = '\\documentstyle{article}\n\\title{Authors}\n'
+        s += '\\author{'
+        for i, a in enumerate(self.authororder):
+            author_name = "%s %s %s" % (self.authors[a]['first'], self.authors[a]['middle'], self.authors[a]['last'])
+            affilstr = str(self.getAffiliationNumbers(a)).strip('[').strip(']')
+            # ##This assumes that author 1 is in the first listed affiliation ==> not a good assumption...
+            if i == 0:
+                atxt = '\\footnote{%s}' % (self.affilOrdered)
+                a0 = self.getAffiliationNumbers(a)
+                if len(a0) > 1:
+                    atxt += '~$^{'
+                    for j in range(1, len(a0)):
+                        atxt += ',' + str(a0[j])
+                    atxt += '}$'
+            else:
+                atxt = '$^{' + affilstr + '}$'
+            s += "%s%s, " % (author_name, atxt)
+        s = s.strip().strip(',') + '}\n\n'
+        s += '\\begin{document}\n\\maketitle\n\\setcounter{footnote}{0}\n\n\\end{document}\n'
+        return s
+
 
 if __name__ == '__main__':
     import argparse
     import sys
 
     ap = argparse.ArgumentParser()
-    ap.add_argument('printout_style', nargs='?', help='cryptic printout style', default='all')
     ap.add_argument('-s', '--screen_only', help="Print list to screen.", action='store_true')
     args = ap.parse_args()
 
@@ -113,49 +147,10 @@ if __name__ == '__main__':
     if args.screen_only:
         h.niceList()
         sys.exit()
-    affilList = h.setAffiliationNumbers()
-    authororder = []
-    for symbol in GROUP_ORDER:
-        if LISTING_ORDER[symbol] == 'fileorder':
-            ordering = h.fileOrder
-        else:
-            ordering = h.alphaOrder
-        for n in ordering:
-            if h.authors[n]['group'] == symbol:
-                authororder.append(n)
-
-    s = '\\documentstyle{article}\n\\title{Authors}\n'
-    s += '\\author{'
-    if args.printout_style == 'all':
-        # ##This assumes that author 1 is in the first listed affiliation
-        for i, a in enumerate(authororder):
-            affilstr = str(h.getAffiliationNumbers(a)).strip('[').strip(']')
-            if i == 0:
-                atxt = '\\footnote{%s}' % (affilList)
-                a0 = h.getAffiliationNumbers(a)
-                if len(a0) > 1:
-                    atxt += '~$^{'
-                    for j in range(1, len(a0)):
-                        atxt += ',' + str(a0[j])
-                    atxt += '}$'
-            else:
-                atxt = '$^{' + affilstr + '}$'
-            s += "%s %s %s%s, " % (h.authors[a]['first'], h.authors[a]['middle'], h.authors[a]['last'], atxt)
-        s = s.strip().strip(',') + '}\n\n'
-        s += '\\begin{document}\n\\maketitle\n\\setcounter{footnote}{0}\n\n\\end{document}\n'
-        affil0 = h.getAffiliationNumbers(authororder[0])[0] - 1
-    elif args.printout_style == 'collab':
-        for i, a in enumerate(authororder):
-            affilstr = str(h.getAffiliationNumbers(a)).strip('[').strip(']')
-            atxt = '\\altaffilmark{%s}' % (affilstr)
-            s += "%s %s %s%s, " % (h.authors[a]['first'], h.authors[a]['middle'], h.authors[a]['last'], atxt)
-        s = s.strip().strip(',') + '}\n\n'
-        s += '\\affil{HERA Collaboration}'
-        for i, a in enumerate(h.affilNums):
-            s += '\\altaffiltext{%d}{%s}\n' % (h.affilNums[a], a)
-        s += '\\begin{document}\n\\maketitle\n\n\\end{document}\n'
+    h.setAffiliationNumbers()
+    h.group_ordered_list()
+    s = h.get_latex()
 
     print "Writing authors.tex"
-    fpout = open('authors.tex', 'w')
-    fpout.write(s)
-    fpout.close()
+    with open('authors.tex', 'w') as f:
+        f.write(s)
