@@ -1,82 +1,70 @@
 #! /usr/bin/env python
-# ################################################################
-# ##Customize output via the script at the bottom of this file.###
-# ################################################################
+# ######################################################################
+# Customize output here by                                             #
+#    1 - defining group symbols and provide listing order              #
+#    2 - stating whether that group should be listed in either         #
+#           'fileorder' or                                             #
+#           'alphaorder'                                               #
+#    Note that the '_' group is the one with no explicit label         #
+GROUP_ORDER = ['*', '@', '_']
+LISTING_ORDER = {'*': 'fileorder', '@': 'alphaorder', '_': 'alphaorder'}
+#                                                                      #
+# Next step is to edit 'builders.txt' to add the group symbols and     #
+#      reorder to suit.                                                #
+# ######################################################################
 
 
 class Authors:
-    """Read in and format author lists for papers"""
+    """Read in and format author lists for papers."""
     def __init__(self, filein='builders.txt'):
         self.filein = filein
-        self.authors = {}
-        self.affiliationList = []
-        self.fileOrder = []
-        self.groupSymbols = ['*', '@', '#', '%']
 
     def getAuthors(self, filein=None):
         if filein is not None:
             self.filein = filein
-            print 'Setting input file to ' + filein
-        print
         print 'Reading ' + self.filein
-        fpin = open(self.filein, 'r')
-        for line in fpin:
-            if line.strip()[0] == '#' or len(line.strip()) == 0:
-                continue
-            data = line.split(':')
-            if len(data) == 2:  # Process valid data line
+        self.authors = {}
+        self.affiliationList = []
+        self.fileOrder = []
+
+        with open(self.filein, 'r') as f:
+            for line in f:
+                data = line.split(':')
+                if line.strip()[0] == '#' or len(data) != 2:
+                    continue
+                # Affiliations
                 affiliation = data[0].strip()
                 self.affiliationList.append(affiliation)
+                # Names
                 nameslist = data[1].strip()
                 names = nameslist.split(',')
                 for name in names:
-                    n = name.split()
+                    n = name.strip().split()
+                    if len(n) != 2 and len(n) != 3:
+                        print "Invalid name format:  ", name.strip(), len(n)
+                        continue
                     firstName = n[0]
-                    group = False
-                    for sym in self.groupSymbols:
+                    lastName = n[-1]
+                    middleName = ''
+                    if len(n) == 3:
+                        middleName = n[1]
+                    group = '_'
+                    for sym in GROUP_ORDER:
                         if sym in firstName:
                             group = sym
                             firstName = firstName.strip(sym)
                             break
-                    if len(n) == 1:
-                        middleInitial = ''
-                        lastName = ''
-                    elif len(n) == 2:
-                        middleInitial = ''
-                        lastName = n[1]
-                    elif len(n) == 3:
-                        middleInitial = n[1]
-                        lastName = n[2]
+                    akey = lastName.lower() + firstName.lower()
+                    if akey in self.authors.keys():
+                        self.authors[akey]['affiliations'].append(affiliation)
                     else:
-                        print line
-                        lastName = 'null'
-                    if lastName != 'null':
-                        akey = lastName.lower() + firstName.lower()
-                        if akey in self.authors.keys():
-                            print 'Another entry for %s %s now at %s' % (firstName, lastName, affiliation)
-                            self.authors[akey][3].append(affiliation)
-                        else:
-                            self.authors[akey] = [firstName, middleInitial, lastName, [affiliation], group]
-                            self.fileOrder.append(akey)
-                        if group:
-                            print 'Found group ' + group + ':  ' + akey
-        fpin.close()
+                        self.authors[akey] = {'first': firstName,
+                                              'middle': middleName,
+                                              'last': lastName,
+                                              'affiliations': [affiliation],
+                                              'group': group}
+                        self.fileOrder.append(akey)
         self.alphaOrder = sorted(self.authors.keys())
-
-    def firstName(self, name):
-        return self.authors[name][0]
-
-    def middleName(self, name):
-        return self.authors[name][1]
-
-    def lastName(self, name):
-        return self.authors[name][2]
-
-    def affiliations(self, name):
-        return self.authors[name][3]
-
-    def isGroup(self, name):
-        return self.authors[name][4]
 
     def setAffiliationNumbers(self):
         self.affilNums = {}
@@ -92,65 +80,59 @@ class Authors:
         self.affilOrdered = self.affilOrdered.strip().strip(',')
         return self.affilOrdered
 
-    def affiliationNumbers(self, name):
-        affil = self.affiliations(name)
+    def getAffiliationNumbers(self, key):
+        affil = self.authors[key]['affiliations']
         nums = []
         for a in affil:
             nums.append(self.affilNums[a])
         return nums
 
-    def niceList(self, fileName=None, flat=False):
+    def niceList(self):
         for aff in self.affiliationList:
             print '\n' + aff
-            for au in self.fileOrder:
-                for auaff in self.affiliations(au):
+            for au in self.alphaOrder:
+                for auaff in self.authors[au]['affiliations']:
                     if auaff == aff:
-                        if not flat:
-                            print "\t%s %s %s" % (self.firstName(au).replace('~', ' '),
-                                                  self.middleName(au).replace('~', ' '),
-                                                  self.lastName(au).replace('~', ' '))
-                        else:
-                            print "%s %s %s, " % (self.firstName(au).replace('~', ' '),
-                                                  self.middleName(au).replace('~', ' '),
-                                                  self.lastName(au).replace('~', ' ')),
+                        niceFirst = self.authors[au]['first'].replace('~', ' ')
+                        niceMiddle = self.authors[au]['middle'].replace('~', ' ')
+                        niceLast = self.authors[au]['last'].replace('~', ' ')
+                        print "\t%s %s %s" % (niceFirst, niceMiddle, niceLast)
 
 
-# ################################################################
-# ##Customize output via this script.                          ###
-# ################################################################
 if __name__ == '__main__':
     import argparse
+    import sys
 
     ap = argparse.ArgumentParser()
-    ap.add_argument('printout_style', nargs='?', help='cryptic printout style', default='1')
+    ap.add_argument('printout_style', nargs='?', help='cryptic printout style', default='all')
+    ap.add_argument('-s', '--screen_only', help="Print list to screen.", action='store_true')
     args = ap.parse_args()
 
     h = Authors()
     h.getAuthors()
+    if args.screen_only:
+        h.niceList()
+        sys.exit()
     affilList = h.setAffiliationNumbers()
     authororder = []
-    # ######HERE'S WHERE YOU ADD THE LOGIC TO SORT THE AUTHORS IN DESIRED ORDER######
-    # ##           h.fileOrder has the list as they appeared in the document
-    # ##           h.alphaOrder has the list in alphabetical order
-    ###
-    for n in h.fileOrder:
-        if h.isGroup(n) == '*':
-            authororder.append(n)
-    for n in h.alphaOrder:
-        if h.isGroup(n) == '@':
-            authororder.append(n)
-    for n in h.alphaOrder:
-        if not h.isGroup(n):
-            authororder.append(n)
-    # ###############################################################################
-    s = '\\author{'
-    if args.printout_style == '1':
+    for symbol in GROUP_ORDER:
+        if LISTING_ORDER[symbol] == 'fileorder':
+            ordering = h.fileOrder
+        else:
+            ordering = h.alphaOrder
+        for n in ordering:
+            if h.authors[n]['group'] == symbol:
+                authororder.append(n)
+
+    s = '\\documentstyle{article}\n\\title{Authors}\n'
+    s += '\\author{'
+    if args.printout_style == 'all':
         # ##This assumes that author 1 is in the first listed affiliation
         for i, a in enumerate(authororder):
-            affilstr = str(h.affiliationNumbers(a)).strip('[').strip(']')
+            affilstr = str(h.getAffiliationNumbers(a)).strip('[').strip(']')
             if i == 0:
                 atxt = '\\footnote{%s}' % (affilList)
-                a0 = h.affiliationNumbers(a)
+                a0 = h.getAffiliationNumbers(a)
                 if len(a0) > 1:
                     atxt += '~$^{'
                     for j in range(1, len(a0)):
@@ -158,25 +140,22 @@ if __name__ == '__main__':
                     atxt += '}$'
             else:
                 atxt = '$^{' + affilstr + '}$'
-            s += "%s %s %s%s, " % (h.firstName(a), h.middleName(a), h.lastName(a), atxt)
+            s += "%s %s %s%s, " % (h.authors[a]['first'], h.authors[a]['middle'], h.authors[a]['last'], atxt)
         s = s.strip().strip(',') + '}\n\n'
-        s += '\\begin{document}\n\\maketitle\n\\setcounter{footnote}{0}\n\n'
-        affil0 = h.affiliationNumbers(authororder[0])[0] - 1
-    elif args.printout_style == '2':
+        s += '\\begin{document}\n\\maketitle\n\\setcounter{footnote}{0}\n\n\\end{document}\n'
+        affil0 = h.getAffiliationNumbers(authororder[0])[0] - 1
+    elif args.printout_style == 'collab':
         for i, a in enumerate(authororder):
-            affilstr = str(h.affiliationNumbers(a)).strip('[').strip(']')
+            affilstr = str(h.getAffiliationNumbers(a)).strip('[').strip(']')
             atxt = '\\altaffilmark{%s}' % (affilstr)
-            s += "%s %s %s%s, " % (h.firstName(a), h.middleName(a), h.lastName(a), atxt)
+            s += "%s %s %s%s, " % (h.authors[a]['first'], h.authors[a]['middle'], h.authors[a]['last'], atxt)
         s = s.strip().strip(',') + '}\n\n'
         s += '\\affil{HERA Collaboration}'
         for i, a in enumerate(h.affilNums):
             s += '\\altaffiltext{%d}{%s}\n' % (h.affilNums[a], a)
-        s += '\\begin{document}\n\\maketitle\n\n'
+        s += '\\begin{document}\n\\maketitle\n\n\\end{document}\n'
 
+    print "Writing authors.tex"
     fpout = open('authors.tex', 'w')
     fpout.write(s)
     fpout.close()
-
-    print s
-    print '\n\n'
-    h.niceList(flat=True)
