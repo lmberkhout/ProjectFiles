@@ -1,4 +1,5 @@
 #! /usr/bin/env python
+from __future__ import print_function
 # ######################################################################
 # Customize output here by                                             #
 #    1 - defining group symbols and provide listing order              #
@@ -6,8 +7,9 @@
 #           'fileorder' or                                             #
 #           'alphaorder'                                               #
 #    Note that the '_' group is the one with no explicit label         #
-GROUP_ORDER = ['*', '@', '_']
-LISTING_ORDER = {'*': 'fileorder', '@': 'alphaorder', '_': 'alphaorder'}
+GROUP_ORDER = ['*', '$', '!', '_']
+LISTING_ORDER = {'*': 'fileorder', '$': 'alphaorder',
+                 '!': 'alphaorder', '_': 'alphaorder'}
 #                                                                      #
 # Next step is to edit 'builders.txt' to add the group symbols and     #
 #      reorder to suit.                                                #
@@ -22,48 +24,51 @@ class Authors:
     def getAuthors(self, filein=None):
         if filein is not None:
             self.filein = filein
-        print 'Reading ' + self.filein
+        print('Reading ' + self.filein)
         self.authors = {}
         self.affiliationList = []
         self.fileOrder = []
 
         with open(self.filein, 'r') as f:
             for line in f:
-                data = line.split(':')
-                if line.strip()[0] == '#' or len(data) != 2:
+                if len(line) < 2 or line.strip()[0] == '#':
+                    continue
+                if line.strip()[0] == '&':
+                    data = line.strip()[1:].split()
+                    if len(data) == 1:
+                        id_type = data[0]
+                    elif len(data) == 2:
+                        for k in self.authors.keys():
+                            if data[0].lower() in k:
+                                self.authors[k]['ID'][id_type] = data[1]
                     continue
                 # Affiliations
-                affiliation = data[0].strip()
-                self.affiliationList.append(affiliation)
+                if line[0] == '@':
+                    affiliation = line[1:].strip()
+                    self.affiliationList.append(affiliation)
+                    continue
                 # Names
-                nameslist = data[1].strip()
-                names = nameslist.split(',')
-                for name in names:
-                    n = name.strip().split()
-                    if len(n) != 2 and len(n) != 3:
-                        print "Invalid name format:  ", name.strip(), len(n)
-                        continue
-                    firstName = n[0]
-                    lastName = n[-1]
-                    middleName = ''
-                    if len(n) == 3:
-                        middleName = n[1]
+                name = line.strip().split()
+                if len(name) != 2 and len(name) != 3:
+                    print("Invalid name format:  {}".format(name))
+                    continue
+                if name[0][0] in GROUP_ORDER:
+                    group = name[0][0]
+                    firstName = name[0][1:]
+                else:
                     group = '_'
-                    for sym in GROUP_ORDER:
-                        if sym in firstName:
-                            group = sym
-                            firstName = firstName.strip(sym)
-                            break
-                    akey = lastName.lower() + firstName.lower()
-                    if akey in self.authors.keys():
-                        self.authors[akey]['affiliations'].append(affiliation)
-                    else:
-                        self.authors[akey] = {'first': firstName,
-                                              'middle': middleName,
-                                              'last': lastName,
-                                              'affiliations': [affiliation],
-                                              'group': group}
-                        self.fileOrder.append(akey)
+                    firstName = name[0]
+                lastName = name[-1]
+                middleName = ''
+                if len(name) == 3:
+                    middleName = name[1]
+                akey = lastName.lower() + firstName.lower()
+                if akey in self.authors.keys():
+                    self.authors[akey]['affiliations'].append(affiliation)
+                else:
+                    self.authors[akey] = {'first': firstName, 'middle': middleName, 'last': lastName,
+                                          'affiliations': [affiliation], 'group': group, 'ID': {}}
+                    self.fileOrder.append(akey)
         self.alphaOrder = sorted(self.authors.keys())
 
     def setAffiliationNumbers(self):
@@ -86,16 +91,21 @@ class Authors:
             nums.append(self.affilNums[a])
         return nums
 
+    def show_id(self):
+        for a in self.authororder:
+            for i, v in self.authors[a]['ID'].iteritems():
+                print("{} {}:  {}".format(i, self.authors[a]['last'], v))
+
     def niceList(self):
         for aff in self.affiliationList:
-            print '\n' + aff
+            print('\n' + aff)
             for au in self.alphaOrder:
                 for auaff in self.authors[au]['affiliations']:
                     if auaff == aff:
                         niceFirst = self.authors[au]['first'].replace('~', ' ')
                         niceMiddle = self.authors[au]['middle'].replace('~', ' ')
                         niceLast = self.authors[au]['last'].replace('~', ' ')
-                        print "\t%s %s %s" % (niceFirst, niceMiddle, niceLast)
+                        print("\t{} {} {}".format(niceFirst, niceMiddle, niceLast))
 
     def group_ordered_list(self):
         self.authororder = []
@@ -109,7 +119,19 @@ class Authors:
                     self.authororder.append(n)
         return self.authororder
 
-    def get_latex(self):
+    def get_latex_affiliation(self):
+        s = ''
+        for k in self.authororder:
+            author = '{} {} {}'.format(self.authors[k]['first'], self.authors[k]['middle'], self.authors[k]['last'])
+            s += '\\author{{{}}}\n'.format(author)
+            for affil in self.authors[k]['affiliations']:
+                s += '\\affiliation{{{}}}\n'.format(affil)
+            s += '\n'
+        with open('builders.tex', 'w') as f:
+            f.write(s)
+        return s
+
+    def get_latex_footnote(self):
         print("This doesn't handle the first affiliation number reliably, unless the first author is from the first affiliation")
         print("Need to fix it (or can reorder in builders.txt in the meantime)")
         s = '\\documentstyle{article}\n\\title{Authors}\n'
@@ -147,10 +169,12 @@ if __name__ == '__main__':
     if args.screen_only:
         h.niceList()
         sys.exit()
-    h.setAffiliationNumbers()
+    # h.setAffiliationNumbers()
     h.group_ordered_list()
-    s = h.get_latex()
+    # s = h.get_latex_footnote()
+    s = h.get_latex_affiliation()
+    h.show_id()
 
-    print "Writing authors.tex"
-    with open('authors.tex', 'w') as f:
+    print("Writing builders.tex")
+    with open('builders.tex', 'w') as f:
         f.write(s)
