@@ -18,8 +18,9 @@ LISTING_ORDER = {'*': 'fileorder', '$': 'alphaorder',
 
 class Authors:
     """Read in and format author lists for papers."""
-    def __init__(self, filein='builders.txt'):
-        self.filein = filein
+    def __init__(self, epoch='H1C'):
+        self.filein = 'builders_{}.txt'.format(epoch.upper())
+        self.fileout = self.filein.split('.')[0] + '.tex'
 
     def getAuthors(self, filein=None):
         if filein is not None:
@@ -31,7 +32,7 @@ class Authors:
 
         with open(self.filein, 'r') as f:
             for line in f:
-                if len(line) < 2 or line.strip()[0] == '#':
+                if len(line.strip()) < 2 or line.strip()[0] == '#':
                     continue
                 if line.strip()[0] == '&':
                     data = line.strip()[1:].split()
@@ -127,9 +128,12 @@ class Authors:
             for affil in self.authors[k]['affiliations']:
                 s += '\\affiliation{{{}}}\n'.format(affil)
             s += '\n'
-        with open('builders.tex', 'w') as f:
-            f.write(s)
         return s
+
+    def write_affil_tex(self, s):
+        print("Writing {}".format(self.fileout))
+        with open(self.fileout, 'w') as f:
+            f.write(s)
 
     def get_latex_footnote(self):
         print("This doesn't handle the first affiliation number reliably, unless the first author is from the first affiliation")
@@ -162,19 +166,21 @@ if __name__ == '__main__':
 
     ap = argparse.ArgumentParser()
     ap.add_argument('-s', '--screen_only', help="Print list to screen.", action='store_true')
+    ap.add_argument('-e', '--epoch', help="Epoch of builders list (H0C, H1C) [H1C]", default='H1C')
+    ap.add_argument('-v', '--version', help="Version type (aas, footnote) [aas]", default='aas')
     args = ap.parse_args()
 
-    h = Authors()
+    h = Authors(args.epoch)
     h.getAuthors()
     if args.screen_only:
         h.niceList()
         sys.exit()
-    # h.setAffiliationNumbers()
+    if args.version == 'footnote':
+        h.setAffiliationNumbers()
     h.group_ordered_list()
-    # s = h.get_latex_footnote()
-    s = h.get_latex_affiliation()
+    if args.version == 'footnote':
+        s = h.get_latex_footnote()
+    else:
+        s = h.get_latex_affiliation()
+    h.write_affil_tex(s)
     h.show_id()
-
-    print("Writing builders.tex")
-    with open('builders.tex', 'w') as f:
-        f.write(s)
