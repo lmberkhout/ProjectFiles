@@ -22,7 +22,7 @@
 	Judd D. Bowman
 	Daniel C. Jacobs
 	Nithyanandan  Thyagarajan
-	Matt Kolopanis 
+	Matthew Kolopanis 
 	Piyanat Kittiwisit
 
 @Department of Physics, Brown University, Providence, RI
