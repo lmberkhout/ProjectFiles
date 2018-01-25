@@ -53,7 +53,7 @@
 @Department of Physics and Astronomy, University of Pennsylvania, Philadelphia, PA
 	James E. Aguirre
 	Saul A. Kohn
-	Paul C. LaPlante
+	Paul C. La~Plante
 	Zachary  Martinot
 
 @Department of Physics and Electronics, Rhodes University, PO Box 94, Grahamstown, 6140, South Africa
@@ -94,11 +94,15 @@
 &ORCID
 &aguirre 0000-0002-4810-666X
 &bernardi 0000-0002-0916-7443
+&deboer 0000-0003-3197-2294
 &dillon 0000-0003-3336-9958
 &ewall-wice 0000-0002-0086-7363
 &greig 0000-0002-4085-2094
 &hazelton 0000-0001-7532-645X
+&la~plante 0000-0002-4693-0101
 &liu 0000-0001-6876-0928
 &kohn 0000-0001-6744-5328
 &thyagarajan 0000-0003-1602-7868
 &williams 0000-0003-3734-3587
+
+
