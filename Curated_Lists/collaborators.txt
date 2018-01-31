@@ -1,0 +1,80 @@
+# Collaborator definitions from Collaboration Agreement:
+#
+# A __Sponsored_Collaborator__ is a Collaborator Sponsored by a Board Member and Approved by the HERA Executive 
+# Board.  The act of Sponsoring confers the right of access to data and intellectual content as defined in 
+# the Sponsoring statement and may include a Supervisory role.## A __Supervisor__ is a Board Member or Sponsored Collaborator with supervisory rights (e.g. thesis advisor
+# or post-doctoral mentor) as recognized at their home institution.  Supervisors who are Sponsored 
+# Collaborators must be Approved as such by the Executive Board, typically as part of the Sponsoring 
+# statement or amendment.## A __Supervised_Collaborator__ is a Collaborator working under the aegis of a Supervisor.  ## A __Collaborator__ is an individual who participates in the Collaboration as recognized by the HERA Executive 
+# Board.  In general, a Collaborator does not necessarily have access rights to HERA content.
+#==============================================
+@Department of Astronomy, University of California, Berkeley, CA
+	David DeBoer:  Supervisor
+	Aaron Parsons:  Supervisor
+
+@School of Earth and Space Exploration, Arizona State University, Tempe, AZ
+	Judd Bowman:  Supervisor
+	Daniel Jacobs:  Supervisor
+
+@Department of Physics, Brown University, Providence, RI
+	Jacob Burba
+	Joshua Kerrigan
+	Adam Lanman
+	Jonathan C. Pober:  Supervisor
+	Peter Sims
+
+@Department of Physics and Astronomy, University of California, Los Angeles, CA
+	Steve R. Furlanetto:  Supervisor
+ 
+
+@Cavendish Astrophysics, University of Cambridge, Cambridge, UK
+	Paul  Alexander:  Supervisor
+	Eloy  de~Lera~Acedo:  Supervisor
+	Nicolas  Fagnoni:  Supervised Collaborator (Eloy)
+	Nima  Razavi-Ghods:  Supervisor
+
+@Harvard-Smithsonian Center for Astrophysics, Cambridge, MA
+	Peter K.~G. Williams:  Sponsored Collaborator (Parsons)
+
+@JPL
+	Aaron Ewall-Wice:  
+
+@Department of Physics, Massachusetts Institute of Technology, Cambridge, MA
+	Jacqueline N. Hewitt:  Supervisor
+
+@National Radio Astronomy Observatory, Charlottesville, VA
+	Richard F. Bradley:  Supervisor
+
+@National Radio Astronomy Observatory, Socorro, NM
+	Chris L. Carilli:  Supervisor
+	Brian  Glendenning:
+	James  Robnett:
+	Nithyanandan  Thyagarajan:  Sponsored Collaborator
+
+@Department of Physics and Astronomy, University of Pennsylvania, Philadelphia, PA
+	James E. Aguirre:  Supervisor
+	Saul A. Kohn:  Supervised Collaborator (Aguirre)
+	Zachary  E. Martinot:  Supervised Collaborator (Aguirre)
+	Paul La~Plante:  Sponsored Collaborator (Aguirre)
+
+@School of Physics, University of Melbourne, Parkville, VIC 3010, Australia
+	Bradley  Greig
+
+@Scuola Normale Superiore, 56126 Pisa, PI, Italy
+	Andrei  Mesinger
+
+@SKA-SA, Cape Town, South Africa
+	Gianni  Bernardi
+	Kathryn  Rosie
+ 
+
+@Department of Physics, University of Washington, Seattle, WA
+	Bryna J. Hazelton:  Supervisor (Morales)
+	Miguel F. Morales:  Supervisor
+	Jon  Ringuette
+
+
+@Department of Physics and McGill Space Institute, McGill University, 3600 University Street, Montreal, QC H3A 2T8, Canada
+	Adrian Liu
+
+
