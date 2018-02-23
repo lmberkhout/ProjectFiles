@@ -10,25 +10,24 @@
 #==============================================
 @Department of Astronomy, University of California, Berkeley, CA
 	David DeBoer:  Supervisor
-	Aaron Parsons:  Supervisor
+	*Aaron Parsons:  Supervisor
 
 @School of Earth and Space Exploration, Arizona State University, Tempe, AZ
-	Judd Bowman:  Supervisor
-	Daniel Jacobs:  Supervisor
+	*Judd Bowman:  Supervisor
+	*Daniel Jacobs:  Supervisor
 
 @Department of Physics, Brown University, Providence, RI
 	Jacob Burba
 	Joshua Kerrigan
 	Adam Lanman
-	Jonathan C. Pober:  Supervisor
+	*Jonathan C. Pober:  Supervisor
 	Peter Sims
 
 @Department of Physics and Astronomy, University of California, Los Angeles, CA
-	Steve R. Furlanetto:  Supervisor
+	*Steve R. Furlanetto:  Supervisor
  
-
 @Cavendish Astrophysics, University of Cambridge, Cambridge, UK
-	Paul  Alexander:  Supervisor
+	*Paul  Alexander:  Supervisor
 	Eloy  de~Lera~Acedo:  Supervisor
 	Nicolas  Fagnoni:  Supervised Collaborator (Eloy)
 	Nima  Razavi-Ghods:  Supervisor
@@ -37,22 +36,22 @@
 	Peter K.~G. Williams:  Sponsored Collaborator (Parsons)
 
 @JPL
-	Aaron Ewall-Wice:  
+	Aaron Ewall-Wice:  Collaborator
 
 @Department of Physics, Massachusetts Institute of Technology, Cambridge, MA
-	Jacqueline N. Hewitt:  Supervisor
+	*Jacqueline N. Hewitt:  Supervisor
 
 @National Radio Astronomy Observatory, Charlottesville, VA
 	Richard F. Bradley:  Supervisor
 
 @National Radio Astronomy Observatory, Socorro, NM
-	Chris L. Carilli:  Supervisor
+	*Chris L. Carilli:  Supervisor
 	Brian  Glendenning:
 	James  Robnett:
 	Nithyanandan  Thyagarajan:  Sponsored Collaborator
 
 @Department of Physics and Astronomy, University of Pennsylvania, Philadelphia, PA
-	James E. Aguirre:  Supervisor
+	*James E. Aguirre:  Supervisor
 	Saul A. Kohn:  Supervised Collaborator (Aguirre)
 	Zachary  E. Martinot:  Supervised Collaborator (Aguirre)
 	Paul La~Plante:  Sponsored Collaborator (Aguirre)
@@ -64,17 +63,18 @@
 	Andrei  Mesinger
 
 @SKA-SA, Cape Town, South Africa
-	Gianni  Bernardi
+	*Gianni  Bernardi
 	Kathryn  Rosie
  
 
 @Department of Physics, University of Washington, Seattle, WA
 	Bryna J. Hazelton:  Supervisor (Morales)
-	Miguel F. Morales:  Supervisor
+	*Miguel F. Morales:  Supervisor
 	Jon  Ringuette
 
 
 @Department of Physics and McGill Space Institute, McGill University, 3600 University Street, Montreal, QC H3A 2T8, Canada
-	Adrian Liu
+	*Adrian Liu
 
-
+@University of Western Cape
+	Mario Santos

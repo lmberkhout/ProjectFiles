@@ -41,6 +41,8 @@
 	Eloy  de~Lera~Acedo
 	Nicolas  Fagnoni
 	Nima  Razavi-Ghods
+	Bojan Nikolic
+	Kingsley Gale-Sides
 
 @Harvard-Smithsonian Center for Astrophysics, Cambridge, MA
 	Peter K.~G. Williams
