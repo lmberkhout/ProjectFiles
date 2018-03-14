@@ -107,8 +107,14 @@ def decorrelations(max_decorr=0.1, frequency=(250. * 1e6 * units.Hz),
                        format(fov=corr_FoV.degree, decorr=max_decorr * 100),
                        baseline_max_decorr_channel_width, wrap_len)
 
-    corr_FoV_max_decorr = Angle(np.arcsin(min([1, (const.c * max_decorr) /
-                                                  (baseline * chan_width.to(1 / units.s))])), units.radian)
+    sin_fov = (const.c * max_decorr) / (baseline * chan_width.to(1 / units.s))
+    if isinstance(sin_fov, np.ndarray) and not sin_fov.shape == ():
+        sin_fov[np.where(sin_fov > 1)[0]] = 1
+    else:
+        if sin_fov > 1:
+            sin_fov = 1
+
+    corr_FoV_max_decorr = Angle(np.arcsin(sin_fov), units.radian)
     decorrelations['corr_FoV_max_decorr'] = corr_FoV_max_decorr
     if verbose:
         print_desc_val('Correlator FoV with less than {decorr}% decorrelation '
@@ -126,10 +132,15 @@ def decorrelations(max_decorr=0.1, frequency=(250. * 1e6 * units.Hz),
                        'longest baseline'.format(fov=corr_FoV.degree),
                        decorr_fringe_stop, wrap_len)
 
-    corr_FoV_fringe_stop_max_decorr = Angle(np.arcsin(min([1, max_resolution.to(units.arcminute) *
-                                                           max_decorr /
-                                                           (fringe_stop_int_time * earth_rot_speed *
-                                                           abs(np.sin(hera_latitude)))])), units.radian)
+    sin_fov = (max_resolution.to(units.arcminute) * max_decorr /
+               (fringe_stop_int_time * earth_rot_speed * abs(np.sin(hera_latitude))))
+    if isinstance(sin_fov, np.ndarray) and not sin_fov.shape == ():
+        sin_fov[np.where(sin_fov > 1)[0]] = 1
+    else:
+        if sin_fov > 1:
+            sin_fov = 1
+
+    corr_FoV_fringe_stop_max_decorr = Angle(np.arcsin(sin_fov), units.radian)
     decorrelations['corr_FoV_fringe_stop_max_decorr'] = corr_FoV_fringe_stop_max_decorr
     if verbose:
         print_desc_val('Correlator FoV with less than {decorr}% decorrelation '
@@ -148,13 +159,18 @@ def decorrelations(max_decorr=0.1, frequency=(250. * 1e6 * units.Hz),
                        'for the longest baseline'.format(fov=corr_FoV.degree),
                        pre_fs_total_decorr, wrap_len)
 
-    if decorr_int_time <= max_decorr:
-        pre_fs_corr_FoV_max_decorr = Angle(np.arcsin(min([1, ((1 - (1 - max_decorr) /
-                                                              (1 - decorr_int_time)) * const.c) /
-                                                             (baseline * chan_width.to(1 / units.s))])),
-                                           units.radian)
+    sin_fov = (((1 - (1 - max_decorr) / (1 - decorr_int_time)) * const.c) /
+               (baseline * chan_width.to(1 / units.s)))
+    if isinstance(sin_fov, np.ndarray) and not sin_fov.shape == ():
+        sin_fov[np.where(decorr_int_time > max_decorr)[0]] = 0
+        sin_fov[np.where(sin_fov > 1)[0]] = 1
     else:
-        pre_fs_corr_FoV_max_decorr = Angle(0, units.radian)
+        if decorr_int_time > max_decorr:
+            sin_fov = 0
+        if sin_fov > 1:
+            sin_fov = 1
+    pre_fs_corr_FoV_max_decorr = Angle(np.arcsin(sin_fov), units.radian)
+
     decorrelations['pre_fs_corr_FoV_max_decorr'] = pre_fs_corr_FoV_max_decorr
     if verbose:
         print_desc_val('Correlator FoV before fringe stopping with less than '
@@ -171,21 +187,28 @@ def decorrelations(max_decorr=0.1, frequency=(250. * 1e6 * units.Hz),
                        format(fov=corr_FoV.degree),
                        post_fs_total_decorr, wrap_len)
 
-    if decorr_int_time <= max_decorr:
-        # calculate correlator FoV after fringe stopping and integrating with
-        # total decorrelation under max_decorr (10%) for the longest baseline
-        # This is a quadratic in sin(FoV), so takes some setup
-        # form: a_term * sin(FoV)**2 + b_term * sin(FoV) + c_term
-        a_term = (baseline * chan_width.to(1 / units.s) * fringe_stop_int_time *
-                  earth_rot_speed * abs(np.sin(hera_latitude))) / (const.c * max_resolution.to(units.arcminute))
-        b_term = (-1) * (baseline * chan_width.to(1 / units.s) / const.c +
-                         fringe_stop_int_time * earth_rot_speed * abs(np.sin(hera_latitude)) /
-                         (max_resolution.to(units.arcminute)))
-        c_term = 1 - (1 - max_decorr) / (1 - decorr_int_time)
-        sin_fov = ((-1) * b_term - np.sqrt(b_term**2 - 4 * a_term * c_term)) / (2 * a_term)
-        post_fs_corr_FoV_max_decorr = Angle(np.arcsin(sin_fov), units.rad)
+    # calculate correlator FoV after fringe stopping and integrating with
+    # total decorrelation under max_decorr (10%) for the longest baseline
+    # This is a quadratic in sin(FoV), so takes some setup
+    # form: a_term * sin(FoV)**2 + b_term * sin(FoV) + c_term
+    a_term = (baseline * chan_width.to(1 / units.s) * fringe_stop_int_time *
+              earth_rot_speed * abs(np.sin(hera_latitude))) / (const.c * max_resolution.to(units.arcminute))
+    b_term = (-1) * (baseline * chan_width.to(1 / units.s) / const.c +
+                     fringe_stop_int_time * earth_rot_speed * abs(np.sin(hera_latitude)) /
+                     (max_resolution.to(units.arcminute)))
+    c_term = 1 - (1 - max_decorr) / (1 - decorr_int_time)
+    sin_fov = ((-1) * b_term - np.sqrt(b_term**2 - 4 * a_term * c_term)) / (2 * a_term)
+
+    if isinstance(sin_fov, np.ndarray) and not sin_fov.shape == ():
+        sin_fov[np.where(decorr_int_time > max_decorr)[0]] = 0
+        sin_fov[np.where(sin_fov > 1)[0]] = 1
     else:
-        post_fs_corr_FoV_max_decorr = Angle(0, units.radian)
+        if decorr_int_time > max_decorr:
+            sin_fov = 0
+        if sin_fov > 1:
+            sin_fov = 1
+    post_fs_corr_FoV_max_decorr = Angle(np.arcsin(sin_fov), units.rad)
+
     decorrelations['post_fs_corr_FoV_max_decorr'] = post_fs_corr_FoV_max_decorr
     if verbose:
         print_desc_val('Correlator FoV after fringe stopping and integrating '
