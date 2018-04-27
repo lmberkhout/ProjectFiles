@@ -28,10 +28,10 @@ This document explores trade-offs along four primary axes:
 
 \begin{enumerate}
 \item \textbf{Number of Frequency Channels}: Since the bandwidth is fixed (50-250 MHz), the number of channels is directly related to the channel 
-width. Larger numbers of channels (narrower channel widths) yield lower decorrelation and higher data rates. The number of channels in the current 
+width. Larger numbers of channels (narrower channel widths) lead to lower decorrelation and higher data rates. The number of channels in the current 
 correlator is 2048 (122kHz wide channels).
 \item \textbf{Integration Time}: The final length of the integrations written by the correlator (after fringe-stopping if that is being done, see next item). 
-Longer integration times lead to more decorrelation and higher data rates. The integration time of the current correlator is 10s.
+Longer integration times lead to more decorrelation and lower data rates. The integration time of the current correlator is 10s.
 \item \textbf{Fringe Stopping}: Fringe stopping removes the first-order decorrelation effect from integrating in time by phasing each visibility (at a very 
 high time cadence, e.g. 100ms) to a fixed point on the celestial sphere before the final time integration step. Fringe stopping significantly decreases 
 the decorrelation for a fixed final integration time. Fringe stopping has no effect on the data rate, but it requires more sophisticated firmware on the 
