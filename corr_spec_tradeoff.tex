@@ -12,6 +12,9 @@
 \setenumerate[3]{label=\arabic*.}
 \setenumerate[4]{label=\roman*.}
 
+\usepackage{cleveref}
+\crefformat{footnote}{#2\footnotemark[#1]#3}
+ 
 \begin{document}
 
 \author{HERA Software Team}
@@ -46,6 +49,7 @@ most of the handling for it could be done in \texttt{pyuvdata} in a way that red
 dependent averaging.
 \end{enumerate}
 
+The plots and tables shown in this document were produced using code and notebooks located in the ProjectFiles repository \footnote{\label{code_link} \url{https://github.com/HERA-Team/ProjectFiles/tree/master/spec_calcs}}. Interested parties are encouraged to run their own scenarios.
 
 \begin{figure}
 \includegraphics[width=\textwidth]{spec_calcs/decorrelation.png} 
@@ -53,7 +57,8 @@ dependent averaging.
 correlator specifications (2048 channels, 10s integration, no fringe stopping), the blue line shows the imaging-driven specifications 
 (4096 channels, 10s integations with fringe stopping) for h2c and the magenta and green lines give two intermediate options. 
 Finally, the black line shows an aggressive imaging-driven specification for the full array (8192 channels, 2s integrations with fringe stopping). 
-Solid lines show the decorrelation at the horizon while the dashed lines show the decorrelation 10 degrees away from the zenith.}
+Solid lines show the decorrelation at the horizon while the dashed lines show the decorrelation 10 degrees away from the zenith. 
+This plot is generated in the  \texttt{h2c\_stats.ipynb} notebook\cref{code_link}.}
 \label{Fig:decorr}
 \end{figure}
 
@@ -62,7 +67,8 @@ Solid lines show the decorrelation at the horizon while the dashed lines show th
 \caption{Correlator data volumes on the longest baseline over the course of the buildout for various correlator options. 
 The line colors are the same as in \ref{Fig:decorr}, but the red and green lines are on top of each other, as are the blue and magenta lines, 
 because the data rate depends only on the number of frequency channels and the final integration time (not on fringe stopping). 
-The data volumes after RTP can be decreased substantially by baseline-dependent averaging.}
+The data volumes after RTP can be decreased substantially by baseline-dependent averaging.
+This plot is generated in the  \texttt{h2c\_stats.ipynb} notebook\cref{code_link}.}
 \label{Fig:corr_vol}
 \end{figure}
 
