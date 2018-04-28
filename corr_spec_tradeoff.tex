@@ -23,16 +23,20 @@
 
 \setcounter{section}{-1}
 \section*{Introduction}
-The specifications for the HERA correlator and real time processing (RTP) have important implications for science with HERA, particularly for image-based calibration, foreground subtraction and power spectra. These specifications also drive the data rate of HERA, and therefore the time and costs associated with processing and storing the data.
+The specifications for the HERA correlator and real time processing (RTP) have important implications for science with HERA, 
+particularly for image-based calibration, foreground subtraction and power spectra. 
+These specifications also drive the data rate of HERA, and therefore the time and costs associated with processing and storing the data.
 
-The effect on imaging and related activities is driven by the amount of decorrelation of the visibilities caused by integrating in time and frequency. Decorrelation causes \textit{baseline-dependent} changes in the instrument response (effective primary beam) that are challenging to model and will limit the accuracy of image-based calibration and foreground subtraction, which rely on high-quality visibility simulations.
+The effect on imaging and related activities is driven by the amount of decorrelation of the visibilities caused by integrating in time and frequency. 
+Decorrelation causes \textit{baseline-dependent} changes in the instrument response (effective primary beam) that are challenging to model and will 
+limit the accuracy of image-based calibration and foreground subtraction, which rely on high-quality visibility simulations. 
 
-This document explores trade-offs along four primary axes:
+This memo explores trade-offs along four primary axes:
 
 \begin{enumerate}
 \item \textbf{Number of Frequency Channels}: Since the bandwidth is fixed (50-250 MHz), the number of channels is directly related to the channel 
-width. Larger numbers of channels (narrower channel widths) lead to lower decorrelation and higher data rates. The number of channels in the current 
-correlator is 2048 (122kHz wide channels).
+width. Larger numbers of channels (narrower channel widths) lead to lower decorrelation and higher data rates.
+The number of channels in the current correlator is 2048 (122kHz wide channels).
 \item \textbf{Integration Time}: The final length of the integrations written by the correlator (after fringe-stopping if that is being done, see next item). 
 Longer integration times lead to more decorrelation and lower data rates. The integration time of the current correlator is 10s.
 \item \textbf{Fringe Stopping}: Fringe stopping removes the first-order decorrelation effect from integrating in time by phasing each visibility (at a very 
@@ -49,7 +53,9 @@ most of the handling for it could be done in \texttt{pyuvdata} in a way that red
 dependent averaging.
 \end{enumerate}
 
-The plots and tables shown in this memo were produced using code and notebooks located in the ProjectFiles repository \footnote{\label{code_link} \url{https://github.com/HERA-Team/ProjectFiles/tree/master/spec_calcs}}. Interested parties are encouraged to run their own scenarios.
+The plots and tables shown in this memo were produced using code and notebooks located in the 
+ProjectFiles repository\footnote{\label{code_link} \url{https://github.com/HERA-Team/ProjectFiles/tree/master/spec_calcs}}. 
+Interested parties are encouraged to run their own scenarios.
 
 \begin{figure}
 \includegraphics[width=\textwidth]{spec_calcs/decorrelation.png} 
