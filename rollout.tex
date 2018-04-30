@@ -2,7 +2,7 @@
 \usepackage{float,amsmath}
 \usepackage{graphicx}
 \usepackage{color}
-\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage[letterpaper,margin=0.75in]{geometry}
 \usepackage{hyperref}
 
 \usepackage{outlines}
@@ -20,74 +20,45 @@
 
 \setcounter{section}{-1}
 \section{Introduction}
-The rollout plan for HERA centers around four systems:
-\begin{itemize}
-\item infrastructure
-\item antenna construction
-\item deployment of new system architecture (node, correlator)
-\item updated implementation within the real-time processor (RTP)
-\end{itemize}
-
-HERA is operated in ``seasons'' that are denoted by:
+HERA is operated in ``seasons'' that are denoted as:
 
 \begin{table}[H]
 \caption{HERA Operating Seasons}
 \begin{tabular}{p{0.5in} p{2.2in} p{3.5in}} \hline
 {\bf H0C} & season which ended in March 2017 & used the first 19 antennas (with their slightly wonky feeds). \\ \hline
-{\bf H1C} & season to begin September 2017 & start with 32, end with 71 with old feeds/architecture\\ \hline
-{\bf H2C} & season to begin August 2018 & start with , end with with new feeds/architecture\\ \hline
-{\bf H3C} & season to begin August 2019 & 350 elements \\ \hline
+{\bf H1C} & season which ended in April 2018 & start with 32, end with 71 with old feeds/architecture\\ \hline
+{\bf H2C} & season to begin October 2018 & start with 59, end with 189 with new feeds/architecture\\ \hline
+{\bf H3C} & season to begin August 2019 & 350 elements with new feeds/architecture \\ \hline
 \end{tabular}
 \end{table}
 
-A high-level schedule is shown in Fig. \ref{Fig:rollout}.
+%A high-level schedule is shown in Fig. \ref{Fig:timeline}.   
+Currently the project has recently completed H1C so this document provides a high-level roll-out discussion beginning for H2C.
 
-\begin{figure}
-\includegraphics[width=\textwidth]{highlevel_timeline.pdf} %under ProjectBook/Schedule
-\caption{High-level rollout timeline.}
-\label{Fig:rollout}
-\end{figure}
-
-\section{H1C}
-H1C will extend from about 1 September 2017 - 1 April 2018, starting with 32 antennas and ending with 71 antennas with the old feeds/architecture.
-
-\subsection{Infrastructure}
-Before the start of the observing season, the current container compound in the center of the cleared PAPER circle will be moved to the western edge.  This is required to get it out of the way of the rest of the HERA build, but means that the current PAPER cables only reach a portion of the antennas, which impacts this season (see below).  Additionally, the servers in the CMC up by the accommodation will be moved into the KAPB and the network reconfiguration will be implemented.
-
-\subsection{Antenna Construction}
-The rollout of antennas is governed by our ability to construct them at pace and the constraint of using the existing cable-based architecture.  Note that of the 35 antennas currently built, nine of them are outside of the reachable radius with the cables (although some additional longer cables may be found and bring some of those back into operation).  Figure \ref{Fig:H1Cant} shows the expected roll-out of antennas.  All of the positions and the approximate order are shown in the file rollout\_positions.txt in the HERA-Team/ProjectFiles repository.
-
-\begin{figure}
-\includegraphics[width=\textwidth]{heraSite.pdf} %photoshopped version from design/hera-cad/heraSite.dwg; updated in that directory
-\caption{H1C antenna rollout.}
-\label{Fig:H1Cant}
-\end{figure}
-
-\subsection{System}
-
-\subsection{RTP}
-
+%\begin{figure}[H]
+%\includegraphics[width=\textwidth]{timeline.pdf} %under ProjectBook/Schedule
+%\caption{High-level timeline.}
+%\label{Fig:timeline}
+%\end{figure}
 
 \section{H2C}
-H2C will extend from about 1 August 2018 - 1 April 2019, with 1 August 2018 - 1 October 2018 purely commissioning time.
+The season will have two phases, H2C.A and H2C.B, which are summarized here:
 
-\subsection{Infrastructure}
+\vspace{0.5cm}
+\begin{tabular}{l l l l p{2.5in}}
+ & \textbf{Date} & \textbf{\#} & \textbf{Channelized/written} & \textbf{Comments} \\ \hline
+H2C.A & 1 Oct 18 & 59-120 & 8192/2048 & Fringe-stopping hooks in, but not implemented.  Even-odd implemented. \\ \hline
+H2C.B & 1 Jan 19 & 120-189 & 8192/? & Fringe-stopping and baseline-dependent averaging implemented.  Goal to present data as same as H2C.A for DS users. \\ \hline
+\end{tabular}
+\vspace{1cm}
 
-\subsection{Antenna Construction}
+The element roll-out is shown in Fig. \ref{Fig:rollout}.
 
-\subsection{System}
-
-\subsection{RTP}
-
-\section{H3C}
-H3C will extend from about 1 September 2019 - 1 April 2020, and comprise about 350 (1C) antennas by its start.
-
-\subsection{Infrastructure}
-
-\subsection{Antenna Construction}
-
-\subsection{System}
-
-\subsection{RTP}
+\begin{figure}[H]
+\includegraphics[width=0.4\textwidth]{cfg181001.png}
+\includegraphics[width=0.4\textwidth]{cfg190101.png}
+\caption{Planned element rollout.  Left shows H2C.A comprising 59 elements by 1 Oct 2018.  Right shows H2C.B comprising 120 elements by 1 Jan 2019.  The legend lists the node numbers.}
+\label{Fig:rollout}
+\end{figure}
 
 \end{document}
