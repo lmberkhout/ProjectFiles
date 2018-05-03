@@ -5,6 +5,7 @@
 *.aux
 network_planning.pdf
 mc_definition.pdf
+corr_spec_tradeoff.pdf
 
 ## python stuff
 # Byte-compiled / optimized / DLL files
