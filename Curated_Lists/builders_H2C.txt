@@ -11,7 +11,6 @@
 	Deepthi Gorthi
 	Jack  Hickish
 	Nick Kern
-	Adrian  Liu
 	David  MacMahon
 	Aaron R. Parsons
 	Nipanjana  Patra
@@ -41,6 +40,7 @@
 	Paul  Alexander
 	Eloy  de~Lera~Acedo
 	Nicolas  Fagnoni
+	Alec Josaitis
 	Nima  Razavi-Ghods
 	Bojan Nikolic
 	Kingsley Gale-Sides
@@ -69,6 +69,9 @@
 	Zachary  E. Martinot
 	Paul La~Plante
 
+@Queen Mary University London
+	Phil Bull
+
 @Department of Physics and Electronics, Rhodes University, PO Box 94, Grahamstown, 6140, South Africa
 	Gianni  Bernardi
 
@@ -76,7 +79,7 @@
 	Gianni  Bernardi
 
 @School of Physics, University of Melbourne, Parkville, VIC 3010, Australia
-	Bradley  Grei
+	Bradley  Greig
 
 @Scuola Normale Superiore, 56126 Pisa, PI, Italy
 	Andrei  Mesinger
@@ -108,9 +111,6 @@
 
 @eScience Institute, University of Washington, Seattle, WA
 	Bryna J. Hazelton
-
-@Hubble Fellow
-	Adrian  Liu
 
 @Department of Physics and McGill Space Institute, McGill University, 3600 University Street, Montreal, QC H3A 2T8, Canada
 	Adrian Liu

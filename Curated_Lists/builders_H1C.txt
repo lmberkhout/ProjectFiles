@@ -8,6 +8,7 @@
 	Carina  Cheng
 	David R. DeBoer
 	Joshua S. Dillon
+	Deepthi Gorthi
 	Jack  Hickish
 	Nick Kern
 	Adrian  Liu
@@ -75,7 +76,7 @@
 	Gianni  Bernardi
 
 @School of Physics, University of Melbourne, Parkville, VIC 3010, Australia
-	Bradley  Grei
+	Bradley  Greig
 
 @Scuola Normale Superiore, 56126 Pisa, PI, Italy
 	Andrei  Mesinger
