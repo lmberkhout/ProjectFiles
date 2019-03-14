@@ -65,6 +65,7 @@
 
 @Department of Physics and Astronomy, University of Pennsylvania, Philadelphia, PA
 	James E. Aguirre
+	Tashalee S. Billings
 	Saul A. Kohn
 	Zachary  E. Martinot
 	Paul La~Plante

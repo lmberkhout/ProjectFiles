@@ -51,7 +51,9 @@
 @Department of Physics, Massachusetts Institute of Technology, Cambridge, MA
 	Aaron  Ewall-Wice
 	Jacqueline N. Hewitt
+	Honggeun Kim
 	Abraham R. Neben
+	Juan Mena Parra
 	Haoxuan Zheng
 
 @National Radio Astronomy Observatory, Charlottesville, VA
@@ -65,6 +67,7 @@
 
 @Department of Physics and Astronomy, University of Pennsylvania, Philadelphia, PA
 	James E. Aguirre
+	Tashalee S. Billings
 	Saul A. Kohn
 	Zachary  E. Martinot
 	Paul La~Plante
@@ -107,7 +110,6 @@
 @Department of Physics, University of Washington, Seattle, WA
 	Bryna J. Hazelton
 	Miguel F. Morales
-	Jon  Ringuette
 
 @eScience Institute, University of Washington, Seattle, WA
 	Bryna J. Hazelton
