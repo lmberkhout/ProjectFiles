@@ -1,5 +1,6 @@
 #! /usr/bin/env python
 from __future__ import print_function
+import six
 # ######################################################################
 # Customize output here by                                             #
 #    1 - defining group symbols and provide listing order              #
@@ -94,7 +95,7 @@ class Authors:
 
     def show_id(self):
         for a in self.authororder:
-            for i, v in self.authors[a]['ID'].iteritems():
+            for i, v in six.iteritems(self.authors[a]['ID']):
                 print("{} {}:  {}".format(i, self.authors[a]['last'], v))
 
     def niceList(self):
