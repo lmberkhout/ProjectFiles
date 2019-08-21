@@ -222,20 +222,26 @@ if __name__ == '__main__':
 
     ap = argparse.ArgumentParser()
     ap.add_argument('-s', '--screen-only', dest='screen_only', help="Print list to screen.", action='store_true')
-    ap.add_argument('-e', '--epoch', help="Epoch of builders list [H2C]", default='H2C')
+    ap.add_argument('-e', '--epoch', help="Epoch of builders list [H2C].  Can be a csv-list.", default='H2C')
     ap.add_argument('-v', '--version', help="Version type [aas]", choices=tex_version_types + csv_version_types, default='aas')
     ap.add_argument('--contact-csv-file', dest='contact_csv_file', help="A csv file containing e-mail addresses [None]", default=None)
+    ap.add_argument('--orcid', help="Just show known ORCID IDs", action='store_true')
     args = ap.parse_args()
 
     if args.version in tex_version_types:
         output_type = 'tex'
     else:
         output_type = 'csv'
+
     h = Authors(epoch=args.epoch, output_type=output_type)
     h.getAuthors()
     if args.screen_only:
         h.niceList()
         sys.exit()
+    if args.orcid:
+        h.show_id()
+        sys.exit()
+
     if args.version == 'footnote':
         h.setAffiliationNumbers()
     h.group_ordered_list()
@@ -244,8 +250,8 @@ if __name__ == '__main__':
         s = h.get_latex_footnote()
     elif args.version == 'aas':
         s = h.get_latex_affiliation()
+
     if output_type == 'tex':
         h.write_affil_tex(s)
     else:
         h.write_csv()
-    h.show_id()
