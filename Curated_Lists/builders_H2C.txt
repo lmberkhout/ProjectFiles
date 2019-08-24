@@ -16,6 +16,7 @@
 	Nipanjana  Patra
 	Matt Dexter
 	Zara Abdurashidova
+	Chuneeta Devi Nunhokee
 
 @School of Earth and Space Exploration, Arizona State University, Tempe, AZ
 	Adam P. Beardsley
@@ -90,7 +91,7 @@
 @Scuola Normale Superiore, 56126 Pisa, PI, Italy
 	Andrei  Mesinger
 
-@SKA-SA, Cape Town, South Africa
+@South African Radio Astronomy Observatory, Black River Park, 2 Fir Street, Observatory, Cape Town, 7925, South Africa
 	Yanga Balfour
 	Gianni  Bernardi
 	Randall  Fritz
@@ -108,6 +109,7 @@
 	Kathryn  Rosie
 	Craig  Smith
 	Angelo  Syce
+	Abhik Ghosh
  
 
 @Department of Physics, University of Washington, Seattle, WA
@@ -119,6 +121,10 @@
 
 @Department of Physics and McGill Space Institute, McGill University, 3600 University Street, Montreal, QC H3A 2T8, Canada
 	Adrian Liu
+
+@Department of Physics and Astronomy,  University of Western Cape, Cape Town, 7535, South Africa
+	Mario Santos
+	Abhik Ghosh
 
 &ORCID
 &aguirre 0000-0002-4810-666X
