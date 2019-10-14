@@ -45,7 +45,10 @@
 	Bojan Nikolic
 	Kingsley Gale-Sides
 
-@Harvard-Smithsonian Center for Astrophysics, Cambridge, MA
+@Center for Astrophysics | Harvard & Smithsonian, Cambridge, MA
+	Peter K.~G. Williams
+
+@American Astronomical Society, Washington, DC
 	Peter K.~G. Williams
 
 @Department of Physics, Massachusetts Institute of Technology, Cambridge, MA
