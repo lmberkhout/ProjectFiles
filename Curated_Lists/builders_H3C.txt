@@ -13,6 +13,7 @@
 	Nicholas S. Kern
 	David  MacMahon
 	Aaron R. Parsons
+	Robert Pascua
 	Nipanjana  Patra
 	Matt Dexter
 	Zara Abdurashidova
@@ -22,9 +23,8 @@
 	Adam P. Beardsley
 	Judd D. Bowman
 	Daniel C. Jacobs
-	Nithyanandan  Thyagarajan
 	Matthew Kolopanis 
-	Piyanat Kittiwisit
+	Steven Murray
 
 @Department of Physics, Brown University, Providence, RI
 	Jacob Burba
@@ -39,8 +39,11 @@
 
 @Cavendish Astrophysics, University of Cambridge, Cambridge, UK
 	Paul  Alexander
+	Steven Carey
 	Eloy  de~Lera~Acedo
+	John Ely
 	Nicolas  Fagnoni
+	Tian Huang
 	Alec Josaitis
 	Nima  Razavi-Ghods
 	Bojan Nikolic
@@ -53,11 +56,12 @@
 	Peter K.~G. Williams
 
 @Department of Physics, Massachusetts Institute of Technology, Cambridge, MA
+	Scott Dynes
 	Aaron  Ewall-Wice
 	Jacqueline N. Hewitt
-	Honggeun Kim
 	Abraham R. Neben
 	Juan Mena Parra
+	Daniel Riley
 	Haoxuan Zheng
 
 @National Radio Astronomy Observatory, Charlottesville, VA
@@ -98,20 +102,14 @@
 	Jasper  Grobbelaar
 	Ziyaad Halday
 	Austin  Julius
-	Telalo  Lekalake
 	Lourence  Malan
 	Cresshim  Malgas
-	Matthys  Maree
-	Eunice  Matsetela
 	Mathakane Molewa
 	Tshegofalang Mosiane
 	Samantha  Pieterse
 	Kathryn  Rosie
 	Craig  Smith
-	Angelo  Syce
-	Abhik Ghosh
  
-
 @Department of Physics, University of Washington, Seattle, WA
 	Bryna J. Hazelton
 	Miguel F. Morales
@@ -121,10 +119,13 @@
 
 @Department of Physics and McGill Space Institute, McGill University, 3600 University Street, Montreal, QC H3A 2T8, Canada
 	Adrian Liu
+	Saurabh Singh
+	Jianrong Tan
 
 @Department of Physics and Astronomy,  University of Western Cape, Cape Town, 7535, South Africa
-	Mario Santos
 	Abhik Ghosh
+	Piyanat Kittiwisit
+	Mario Santos
 
 &ORCID
 &aguirre 0000-0002-4810-666X
