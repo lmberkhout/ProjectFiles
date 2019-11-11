@@ -34,7 +34,7 @@
 	Peter Sims
 
 @Department of Physics and Astronomy, University of California, Los Angeles, CA
-	Steve R. Furlanetto
+	Steven R. Furlanetto
  
 
 @Cavendish Astrophysics, University of Cambridge, Cambridge, UK

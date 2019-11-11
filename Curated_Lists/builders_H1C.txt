@@ -22,6 +22,7 @@
 	Adam P. Beardsley
 	Judd D. Bowman
 	Daniel C. Jacobs
+	David Lewis
 	Nithyanandan  Thyagarajan
 	Matthew Kolopanis 
 	Piyanat Kittiwisit
@@ -34,12 +35,14 @@
 	Peter Sims
 
 @Department of Physics and Astronomy, University of California, Los Angeles, CA
-	Steve R. Furlanetto
+	Steven R. Furlanetto
  
 
 @Cavendish Astrophysics, University of Cambridge, Cambridge, UK
 	Paul  Alexander
+	Steve Carey
 	Eloy  de~Lera~Acedo
+	John Ely
 	Nicolas  Fagnoni
 	Nima  Razavi-Ghods
 	Bojan Nikolic
