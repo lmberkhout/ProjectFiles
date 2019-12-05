@@ -1,6 +1,4 @@
 #! /usr/bin/env python
-from __future__ import print_function
-import six
 import sys
 # ######################################################################
 # Customize output here by                                             #
@@ -29,7 +27,7 @@ class Authors:
     Parameters
     ----------
     epoch : str
-        The epoch(s) to use.  It is a csv string.
+        The epoch(s) to use.  It is a csv string for H1C and/or H3C
     output_type : str
         Output type to use.  Other tex or csv
     """
@@ -114,7 +112,7 @@ class Authors:
 
     def show_id(self):
         for a in self.authororder:
-            for i, v in six.iteritems(self.authors[a]['ID']):
+            for i, v in self.authors[a]['ID'].items():
                 print("{} {}:  {}".format(i, self.authors[a]['last'], v))
 
     def niceList(self):
@@ -218,7 +216,6 @@ csv_version_types = ['nsf']
 epochs = ['H0C', 'H1C', 'H2C']
 if __name__ == '__main__':
     import argparse
-    import sys
 
     ap = argparse.ArgumentParser()
     ap.add_argument('-s', '--screen-only', dest='screen_only', help="Print list to screen.", action='store_true')
