@@ -126,6 +126,9 @@
 	Abhik Ghosh
 	Piyanat Kittiwisit
 	Mario Santos
+	
+@Nithyanandan Thyagarajan is a Jansky fellow of the National Radio Astronomy Observatory.
+        Nithyanandan Thyagarajan
 
 &ORCID
 &aguirre 0000-0002-4810-666X
