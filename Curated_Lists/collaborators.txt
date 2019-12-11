@@ -34,6 +34,7 @@
 
 @Harvard-Smithsonian Center for Astrophysics, Cambridge, MA
 	Peter K.~G. Williams:  Sponsored Collaborator (Parsons)
+	Julian Munoz:  Supervised collaborator (Mesinger)
 
 @JPL
 	Aaron Ewall-Wice:  Collaborator

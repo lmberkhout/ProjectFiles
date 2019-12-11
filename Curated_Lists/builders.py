@@ -213,7 +213,7 @@ class Authors:
 
 tex_version_types = ['aas', 'footnote']
 csv_version_types = ['nsf']
-epochs = ['H0C', 'H1C', 'H2C']
+epochs = ['H0C', 'H1C', 'H3C']
 if __name__ == '__main__':
     import argparse
 
