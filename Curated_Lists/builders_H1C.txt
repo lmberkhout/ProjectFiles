@@ -122,6 +122,9 @@
 @Department of Physics and McGill Space Institute, McGill University, 3600 University Street, Montreal, QC H3A 2T8, Canada
 	Adrian Liu
 
+@Nithyanandan Thyagarajan is a Jansky fellow of the National Radio Astronomy Observatory.
+        Nithyanandan Thyagarajan
+
 &ORCID
 &aguirre 0000-0002-4810-666X
 &bernardi 0000-0002-0916-7443
