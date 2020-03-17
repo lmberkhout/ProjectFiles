@@ -88,7 +88,7 @@
 @Scuola Normale Superiore, 56126 Pisa, PI, Italy
 	Andrei  Mesinger
 
-@SKA-SA, Cape Town, South Africa
+@South African Radio Astronomy Observatory, Black River Park, 2 Fir Street, Observatory, Cape Town, 7925, South Africa
 	Yanga Balfour
 	Gianni  Bernardi
 	Randall  Fritz
