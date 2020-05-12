@@ -132,6 +132,10 @@
 @Nithyanandan Thyagarajan is a Jansky fellow of the National Radio Astronomy Observatory.
         Nithyanandan Thyagarajan
 
+@NSF Astronomy and Astrophysics Postdoctoral Fellow
+	Adam P. Beardsley
+	Joshua S. Dillon
+
 &ORCID
 &aguirre 0000-0002-4810-666X
 &bernardi 0000-0002-0916-7443
