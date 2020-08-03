@@ -18,6 +18,10 @@ Harassment on the basis of any other protected characteristic is also strictly p
 
 Discrimination refers to bias or prejudice resulting in denial of opportunity, or unfair treatment regarding selection, promotion, or transfer. Discrimination is practiced commonly on the grounds of age, disability, ethnicity, origin, political belief, race, religion, sex and other factors which are irrelevant to a person's competence or suitability.
 
+## Definition of Microaggressions
+
+Microaggressions are subtle discriminatory statements where often the people saying them are well-intentioned and do not realize their words are rooted in their own unconscious bias. Some examples of this include but are not limited to telling a black colleague they are ‘so articulate,’ telling a transgender individual they ‘do not look transgender,’ mixing up coworkers’ names of the same race or ethnicity, asking people where they ‘are actually from,’ telling someone their name ‘is very hard to pronounce,’ and saying that a black woman’s natural hair is ‘unprofessional.’ Comments related to an individual’s race, ethnicity, gender identity or expression, sexual orientation, or anything else concerning their personal identity or appearance is unnecessary and can make colleagues feel uncomfortable and unsafe.
+
 ## Definition of Retaliation
 
 Retaliation refers to taking some action to negatively impact another based on them reporting an act of discrimination or harassment.
