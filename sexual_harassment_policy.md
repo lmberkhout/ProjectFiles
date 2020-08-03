@@ -28,7 +28,7 @@ This policy applies to all participants in the HERA Collaboration in all collabo
 
 ## Reporting an Incident
 
-Any member of the HERA Collaboration who believes that she or he has been subjected to harassment should reach out for help. Resources available include:
+Any member of the HERA Collaboration who believes that she or he has been subjected to harassment or discrimination or has witnessed someone else being subjected to harrassment or discrimination should reach out for help. Resources available include:
 
  - Your research mentor or supervisor
  - The HERA PI at your site
@@ -36,7 +36,7 @@ Any member of the HERA Collaboration who believes that she or he has been subjec
  - Your home campus Title IX office or equivalent (should one exist)
  - Your home campus Ombuds office or equivalent (should one exist)
 
-Note that many faculty and staff members at your institution (possibly including your research mentor and/or site PI) may be required to report any incident to their local Title IX office if told about it. If you choose to report an incident to members of the HERA Collaboration we will maintain your privacy to the maximum degree possible within the constraints of mandatory reporting requirements.
+Note that many faculty and staff members at your institution (possibly including your research mentor and/or site PI) may be required to report any sexual harassment incident to their local Title IX office if told about it. If you choose to report any incident to members of the HERA Collaboration we will maintain your privacy to the maximum degree possible within the constraints of mandatory reporting requirements.
 
 Advice for reporting sexual or other forms of harassment is available on the website of the Committee on the Status of Women in Astronomy (CSWA). Here is a summary of the more detailed information available on the CSWA website:
 
@@ -44,11 +44,11 @@ Write everything down (times, places, nature of the incident, and comments made)
 
 ## Responding to an Incident Report
 
-If the HERA Collaboration becomes aware of an incident of harassment, the HERA Executive Board will meet to consider what actions, if any, the collaboration will take.  The HERA Executive Board reserves the right to suspend or revoke collaborator status on the basis of credible reports, independent of any official findings of a university Title IX or other office or disciplinary action by a university in the collaboration.
+If the HERA Collaboration becomes aware of an incident of harassment or discrimination, the HERA Executive Board will meet to consider what actions, if any, the collaboration will take.  The HERA Executive Board reserves the right to suspend or revoke collaborator status on the basis of credible reports, independent of any official findings of a university Title IX or other office or disciplinary action by a university in the collaboration.
 
 A non-exhaustive list of available actions includes:
 
- - Suspension of collaborator status pending the completion of anti-harassment training
+ - Suspension of collaborator status pending the completion of anti-harassment or anti-discrimination training
  - Removal from the HERA Builder’s list and the author listings of future publications
  - Disbarment from collaboration meetings
  - Permanent revocation of collaborator status
