@@ -4,6 +4,8 @@
 
 It is the policy of the HERA Collaboration that all participants in the collaboration will enjoy an environment free from all forms of discrimination, harassment, and retaliation. The HERA Collaboration is dedicated to the philosophy of equality of opportunity and treatment for all participants, regardless of gender, gender identity or expression, race, color, national or ethnic origin, religion or religious belief, age, marital status, sexual orientation, disabilities, veteran status, or any other reason not related to scientific merit. Harassment, sexual or otherwise, is a form of misconduct that undermines the integrity of the collaboration. Violators of this policy will be subject to discipline.
 
+HERA as a collaboration believes in bringing justice to the system of science that is rooted in white supremacy, patriarchal values, and other inequalities. Because of this, we are making it mandatory that all HERA collaborators understand what harassment and discrimination are and agree to not participate in such actions. By making it mandatory for every collaborator to read and agree to these policies, we as a collaboration are making the next steps towards anti-inequality on all fronts.  
+
 ## Definition of Sexual Harassment
 
 Sexual harassment refers to unwelcome sexual advances, requests for sexual favors, and other verbal or physical conduct of a sexual nature. Behavior and language that are welcome/acceptable to one person may be unwelcome/offensive to another. Consequently, individuals must use discretion to ensure that their words and actions communicate respect for others. This is especially important for those in positions of authority since individuals with lower rank or status may be reluctant to express their objections or discomfort regarding unwelcome behavior.
@@ -18,6 +20,13 @@ Harassment on the basis of any other protected characteristic is also strictly p
 
 Discrimination refers to bias or prejudice resulting in denial of opportunity, or unfair treatment regarding selection, promotion, or transfer. Discrimination is practiced commonly on the grounds of age, disability, ethnicity, origin, political belief, race, religion, sex and other factors which are irrelevant to a person's competence or suitability.
 
+## Definition of Microaggressions
+
+Microaggressions are subtle discriminatory statements where often the people saying them are well-intentioned and do not realize their words are rooted in their own unconscious bias. Some examples of this include but are not limited to telling a black colleague they are ‘so articulate,’ telling a transgender individual they ‘do not look transgender,’ mixing up coworkers’ names of the same race or ethnicity, asking people where they ‘are actually from,’ telling someone their name ‘is very hard to pronounce,’ and saying that a black woman’s natural hair is ‘unprofessional.’ Comments related to an individual’s race, ethnicity, gender identity or expression, sexual orientation, or anything else concerning their personal identity or appearance is unnecessary and can make colleagues feel uncomfortable and unsafe.
+## Addressing Racism
+
+It is important that every person acknowledges that everyone has unconscious biases, whether that’s towards others or internalized. Racism is not a binary concept where there are ‘good non-racist people’ and ‘bad racist people.’ Every person has a responsibility to acknowledge that they have racist biases, whether conscious or unconscious, and work to combat them within themselves. Striving to be anti-racist does not mean you have no racist biases; the path to becoming anti-racist as an organization and as individuals means spreading awareness and addressing issues when they come up instead of ignoring them. All collaborators must agree that if someone tells you something you did was racist, insensitive, or discriminatory, the best and most effective course of action to take is to apologize and listen to learn how to improve for the future.
+
 ## Definition of Retaliation
 
 Retaliation refers to taking some action to negatively impact another based on them reporting an act of discrimination or harassment.
@@ -28,7 +37,9 @@ This policy applies to all participants in the HERA Collaboration in all collabo
 
 ## Reporting an Incident
 
-Any member of the HERA Collaboration who believes that she or he has been subjected to harassment or discrimination or has witnessed someone else being subjected to harrassment or discrimination should reach out for help. Resources available include:
+It is important that every collaborator is responsible with agreeing to not partake in discriminatory behaviors and actions and also to take action when witnessing these behaviors second-hand. It is often very difficult for victims of discrimination or harassment to report incidents as oftentimes the person in power will not believe the person coming forward and/or not give the perpetrator a suitable punishment; oftentimes people not involved will have negative thoughts and feelings about the person coming forward for reporting it. That is why it is very important that every collaborator commits to being an ally to report incidents of discrimination or harassment even if the comment or action does not directly affect them personally. Good allies will also listen and be respectful to others if they come forward with sharing an experience of discrimination or harassment towards them.
+
+Any member of the HERA Collaboration who believes that she or he has been subjected to harassment should reach out for help. Resources available include:
 
  - Your research mentor or supervisor
  - The HERA PI at your site
