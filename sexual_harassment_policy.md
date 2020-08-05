@@ -37,6 +37,8 @@ This policy applies to all participants in the HERA Collaboration in all collabo
 
 ## Reporting an Incident
 
+It is important that every collaborator is responsible with agreeing to not partake in discriminatory behaviors and actions and also to take action when witnessing these behaviors second-hand. It is often very difficult for victims of discrimination or harassment to report incidents as oftentimes the person in power will not believe the person coming forward and/or not give the perpetrator a suitable punishment; oftentimes people not involved will have negative thoughts and feelings about the person coming forward for reporting it. That is why it is very important that every collaborator commits to being an ally to report incidents of discrimination or harassment even if the comment or action does not directly affect them personally. Good allies will also listen and be respectful to others if they come forward with sharing an experience of discrimination or harassment towards them.
+
 Any member of the HERA Collaboration who believes that she or he has been subjected to harassment should reach out for help. Resources available include:
 
  - Your research mentor or supervisor
