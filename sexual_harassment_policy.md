@@ -4,6 +4,8 @@
 
 It is the policy of the HERA Collaboration that all participants in the collaboration will enjoy an environment free from all forms of discrimination, harassment, and retaliation. The HERA Collaboration is dedicated to the philosophy of equality of opportunity and treatment for all participants, regardless of gender, gender identity or expression, race, color, national or ethnic origin, religion or religious belief, age, marital status, sexual orientation, disabilities, veteran status, or any other reason not related to scientific merit. Harassment, sexual or otherwise, is a form of misconduct that undermines the integrity of the collaboration. Violators of this policy will be subject to discipline.
 
+HERA as a collaboration believes in bringing justice to the system of science that is rooted in white supremacy, patriarchal values, and other inequalities. Because of this, we are making it mandatory that all HERA collaborators understand what harassment and discrimination are and agree to not participate in such actions. By making it mandatory for every collaborator to read and agree to these policies, we as a collaboration are making the next steps towards anti-inequality on all fronts.  
+
 ## Definition of Sexual Harassment
 
 Sexual harassment refers to unwelcome sexual advances, requests for sexual favors, and other verbal or physical conduct of a sexual nature. Behavior and language that are welcome/acceptable to one person may be unwelcome/offensive to another. Consequently, individuals must use discretion to ensure that their words and actions communicate respect for others. This is especially important for those in positions of authority since individuals with lower rank or status may be reluctant to express their objections or discomfort regarding unwelcome behavior.
@@ -21,6 +23,9 @@ Discrimination refers to bias or prejudice resulting in denial of opportunity, o
 ## Definition of Microaggressions
 
 Microaggressions are subtle discriminatory statements where often the people saying them are well-intentioned and do not realize their words are rooted in their own unconscious bias. Some examples of this include but are not limited to telling a black colleague they are ‘so articulate,’ telling a transgender individual they ‘do not look transgender,’ mixing up coworkers’ names of the same race or ethnicity, asking people where they ‘are actually from,’ telling someone their name ‘is very hard to pronounce,’ and saying that a black woman’s natural hair is ‘unprofessional.’ Comments related to an individual’s race, ethnicity, gender identity or expression, sexual orientation, or anything else concerning their personal identity or appearance is unnecessary and can make colleagues feel uncomfortable and unsafe.
+## Addressing Racism
+
+It is important that every person acknowledges that everyone has unconscious biases, whether that’s towards others or internalized. Racism is not a binary concept where there are ‘good non-racist people’ and ‘bad racist people.’ Every person has a responsibility to acknowledge that they have racist biases, whether conscious or unconscious, and work to combat them within themselves. Striving to be anti-racist does not mean you have no racist biases; the path to becoming anti-racist as an organization and as individuals means spreading awareness and addressing issues when they come up instead of ignoring them. All collaborators must agree that if someone tells you something you did was racist, insensitive, or discriminatory, the best and most effective course of action to take is to apologize and listen to learn how to improve for the future.
 
 ## Definition of Retaliation
 
