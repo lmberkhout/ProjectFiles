@@ -20,6 +20,10 @@ Harassment on the basis of any other protected characteristic is also strictly p
 
 Discrimination refers to bias or prejudice resulting in denial of opportunity, or unfair treatment regarding selection, promotion, or transfer. Discrimination is practiced commonly on the grounds of age, disability, ethnicity, origin, political belief, race, religion, sex and other factors which are irrelevant to a person's competence or suitability.
 
+## Addressing Racism
+
+It is important that every person acknowledges that everyone has unconscious biases, whether that’s towards others or internalized. Racism is not a binary concept where there are ‘good non-racist people’ and ‘bad racist people.’ Every person has a responsibility to acknowledge that they have racist biases, whether conscious or unconscious, and work to combat them within themselves. Striving to be anti-racist does not mean you have no racist biases; the path to becoming anti-racist as an organization and as individuals means spreading awareness and addressing issues when they come up instead of ignoring them. All collaborators must agree that if someone tells you something you did was racist, insensitive, or discriminatory, the best and most effective course of action to take is to apologize and listen to learn how to improve for the future.
+
 ## Definition of Retaliation
 
 Retaliation refers to taking some action to negatively impact another based on them reporting an act of discrimination or harassment.
