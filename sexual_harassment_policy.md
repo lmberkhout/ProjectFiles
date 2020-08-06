@@ -53,6 +53,9 @@ Advice for reporting sexual or other forms of harassment is available on the web
 
 Write everything down (times, places, nature of the incident, and comments made). Save emails, notes, etc. Tell someone you trust. If you decide to file a formal complaint, and depending on the policies of your host institution, it is likely that you will have to write and sign an official letter of complaint, documenting the nature of the harassment and/or discrimination. Be as detailed as possible. Supporting documentation and statements from witnesses should be submitted with your letter.
 
+For reporting more minor infractions such as independent incidents of microagressions, an informal process of mediation through a mentor or ombuds-person is also available. Mediated processes are education based where the person who reported the incident and the mediator can explain to the perpetrator why what they said or did was hurtful and/or rooted in their own biases. The goal of the mediated process is for the perpetrator to apologize and learn from their mistakes, but harsher punishments can be sought after if the perpetrator fails to stop.
+
+
 ## Responding to an Incident Report
 
 If the HERA Collaboration becomes aware of an incident of harassment or discrimination, the HERA Executive Board will meet to consider what actions, if any, the collaboration will take.  The HERA Executive Board reserves the right to suspend or revoke collaborator status on the basis of credible reports, independent of any official findings of a university Title IX or other office or disciplinary action by a university in the collaboration.
