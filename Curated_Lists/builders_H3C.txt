@@ -126,9 +126,11 @@
 
 @Department of Physics and Astronomy,  University of Western Cape, Cape Town, 7535, South Africa
 	Abhik Ghosh
-	Piyanat Kittiwisit
 	Mario G. Santos
 	
+@School of Chemistry and Physics, University of KwaZulu-Natal, Westville Campus, Private Bag X54001, Durban, South Africa
+	Piyanat Kittiwisit
+
 @Nithyanandan Thyagarajan is a Jansky fellow of the National Radio Astronomy Observatory.
         Nithyanandan Thyagarajan
 
