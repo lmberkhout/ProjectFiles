@@ -22,10 +22,11 @@ Discrimination refers to bias or prejudice resulting in denial of opportunity, o
 
 ## Definition of Microaggressions
 
-Microaggressions are subtle discriminatory statements where often the people saying them are well-intentioned and do not realize their words are rooted in their own unconscious bias. Some examples of this include but are not limited to telling a black colleague they are ‘so articulate,’ telling a transgender individual they ‘do not look transgender,’ mixing up coworkers’ names of the same race or ethnicity, asking people where they ‘are actually from,’ telling someone their name ‘is very hard to pronounce,’ and saying that a black woman’s natural hair is ‘unprofessional.’ Comments related to an individual’s race, ethnicity, gender identity or expression, sexual orientation, or anything else concerning their personal identity or appearance is unnecessary and can make colleagues feel uncomfortable and unsafe.
+Microaggressions are subtle discriminatory statements where often the people saying them are well-intentioned and do not realize their words are rooted in their own unconscious bias. Some examples of this include but are not limited to telling a black colleague they are ‘so articulate,’ telling a transgender individual they ‘do not look transgender,’ mixing up coworkers’ names of the same race or ethnicity, asking people where they ‘are actually from,’ telling someone their name ‘is very hard to pronounce', and saying that a black woman’s natural hair is ‘unprofessional’. Comments related to an individual’s race, ethnicity, gender identity or expression, sexual orientation, or anything else concerning their personal identity or appearance is unnecessary and can make colleagues feel uncomfortable and unsafe.
+
 ## Addressing Racism
 
-It is important that every person acknowledges that everyone has unconscious biases, whether that’s towards others or internalized. Racism is not a binary concept where there are ‘good non-racist people’ and ‘bad racist people.’ Every person has a responsibility to acknowledge that they have racist biases, whether conscious or unconscious, and work to combat them within themselves. Striving to be anti-racist does not mean you have no racist biases; the path to becoming anti-racist as an organization and as individuals means spreading awareness and addressing issues when they come up instead of ignoring them. All collaborators must agree that if someone tells you something you did was racist, insensitive, or discriminatory, the best and most effective course of action to take is to apologize and listen to learn how to improve for the future.
+It is important that every person acknowledges that everyone has unconscious biases, whether towards others or internalized. Racism is not a binary concept where there are ‘good non-racist people’ and ‘bad racist people.’ Every person has a responsibility to acknowledge that they have racist biases, whether conscious or unconscious, and work to combat them within themselves. Striving to be anti-racist does not mean you have no racist biases; the path to becoming anti-racist as an organization and as individuals means spreading awareness and addressing issues when they come up instead of ignoring them. All collaborators must agree that if someone tells you something you did was racist, insensitive, or discriminatory, the best and most effective course of action to take is to apologize and listen to learn how to improve for the future.
 
 ## Definition of Retaliation
 
@@ -43,7 +44,21 @@ Any member of the HERA Collaboration who believes that she or he has been subjec
 
  - Your research mentor or supervisor
  - The HERA PI at your site
- - The HERA Executive Board (PI Aaron Parsons, aparsons@berkeley.edu, or Program Manager David DeBoer, ddeboer@berkeley.edu)
+ - The HERA Executive Board:
+    - Judd Bowman – Arizona State University
+    - Daniel Jacobs – Arizona State University
+    - Aaron Parsons (Chair) – University of California Berkeley
+    - Steve Furlanetto – University of California Los Angeles
+    - Paul Alexander – University of Cambridge
+    - Jacqueline Hewitt – Massachusetts Institute of Technology
+    - Adrian Liu – McGill University
+    - Chris Carilli – National Radio Astronomy Observatory
+    - Phillip Bull – Queen Mary University of London
+    - James Aguirre – University of Pennsylvania
+    - Andrei Mesinger – Scuola Normale Superiore di Pisa
+    - Gianni Bernardi – SKA-South Africa
+    - Bryna Hazelton – University of Washington
+    - David DeBoer, ddeboer@berkeley.edu
  - Your home campus Title IX office or equivalent (should one exist)
  - Your home campus Ombuds office or equivalent (should one exist)
 
